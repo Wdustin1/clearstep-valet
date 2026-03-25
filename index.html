@@ -842,7 +842,11 @@
           </div>
         </div>
         <div class="contact-form reveal" style="transition-delay:0.15s">
-          <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="a3a95b7a-dd2b-45cc-a2fe-e1f733d7bdf6" />
+            <input type="hidden" name="subject" value="New Quote Request — ClearStep Valet" />
+            <input type="hidden" name="from_name" value="ClearStep Valet Website" />
+            <input type="checkbox" name="botcheck" style="display:none" />
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
@@ -941,35 +945,25 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Sending…'; btn.disabled = true;
-
-      // If Formspree not yet configured, fall back to mailto
-      const action = form.action;
-      if (action.includes('REPLACE_WITH_FORM_ID')) {
-        // Fallback: open mailto
-        const name = form.name.value;
-        const email = form.email.value;
-        const units = form.units.value;
-        const property = form.property.value;
-        const message = form.message.value;
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nUnits: ${units}\nProperty: ${property}\n\n${message}`);
-        window.location.href = `mailto:info@clearstepvalet.com?subject=Quote%20Request%20from%20${encodeURIComponent(name)}&body=${body}`;
-        btn.textContent = 'Send My Request'; btn.disabled = false;
-        return;
-      }
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = 'Sending…'; btn.disabled = true;
 
       try {
-        const res = await fetch(action, {
-          method: 'POST', body: new FormData(form),
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
-        if (res.ok) {
+        const data = await res.json();
+        if (data.success) {
           form.style.display = 'none';
           document.getElementById('form-success').style.display = 'block';
-        } else { throw new Error(); }
-      } catch {
-        btn.textContent = 'Send My Request'; btn.disabled = false;
-        alert('Something went wrong. Please email us directly at info@clearstepvalet.com');
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        btn.innerHTML = originalHTML; btn.disabled = false;
+        alert('Something went wrong. Please email us directly at wdustin1986@gmail.com');
       }
     });
   </script>

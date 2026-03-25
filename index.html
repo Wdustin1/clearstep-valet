@@ -647,23 +647,104 @@
 
     /* ── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .hero-dotgrid { display: none; }
-      .hero-content { padding: 80px 0; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat-item:nth-child(2) { border-right: none; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .services-layout { grid-template-columns: 1fr; gap: 40px; }
-      .services-sticky { position: static; }
-      .why-grid { grid-template-columns: 1fr; }
-      .managers-layout { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
-      .form-row { grid-template-columns: 1fr; }
+      /* Layout */
+      section { padding: 64px 0; }
+      #cta-band { padding: 72px 0; }
+      #stats { padding: 40px 0; }
+
+      /* Nav */
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
+
+      /* Hero */
+      #hero { grid-template-columns: 1fr; min-height: auto; padding: 68px 0 0; }
+      .hero-visual { display: none; }
+      .hero-dotgrid { display: none; }
+      .hero-content {
+        padding: 52px 24px 56px !important;
+      }
+      h1 { font-size: clamp(2.2rem, 9vw, 2.8rem); }
+      .hero-sub { font-size: 1rem; max-width: 100%; }
+      .btn-group { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .btn-primary { width: 100%; justify-content: center; min-height: 52px; }
+      .btn-secondary { min-height: 44px; }
+
+      /* Stats */
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { padding: 20px 16px; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-right: none; }
+      .stat-item:nth-child(1),
+      .stat-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+      .stat-num { font-size: 2rem; }
+
+      /* Steps */
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-card { padding: 28px 24px; }
+
+      /* Services */
+      .services-layout { grid-template-columns: 1fr; gap: 36px; }
+      .services-sticky { position: static; }
+      .section-sub { margin-bottom: 32px; }
+      .service-card { padding: 20px; }
+      .service-icon { width: 40px; height: 40px; }
+
+      /* Why */
+      .why-grid { grid-template-columns: 1fr; }
+      .why-card { padding: 28px 22px; }
+
+      /* Managers / NOI */
+      .managers-layout { grid-template-columns: 1fr; gap: 48px; }
+      .noi-calculator { padding: 24px 20px; }
+      .noi-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 12px 16px;
+      }
+      .noi-row-val { font-size: 1.15rem; }
+      .noi-row.highlight .noi-row-val { font-size: 1.35rem; }
+      .noi-slider-label strong { font-size: 1.2rem; }
+
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr; gap: 12px; }
+      .testimonial-card { padding: 22px; }
+
+      /* CTA band */
+      .cta-band-inner .section-label {
+        justify-content: flex-start;
+      }
+      .cta-band-inner h2 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+      .cta-band-inner p { font-size: 1rem; }
+      .cta-band-inner .btn-primary { width: auto; min-width: 220px; }
+
+      /* Contact */
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .contact-form { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      /* Section labels */
+      h2 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+
+      /* Touch targets — all interactive elements min 44px */
+      .nav-cta,
+      .btn-primary,
+      .btn-secondary,
+      .form-group input,
+      .form-group select,
+      .form-group textarea,
+      .mobile-menu a { min-height: 44px; }
+
+      /* Footer */
+      .footer-links { gap: 18px; }
+    }
+
+    /* Small phones (< 390px) */
+    @media (max-width: 380px) {
+      h1 { font-size: 2rem; }
+      .stat-num { font-size: 1.75rem; }
+      .noi-calculator { padding: 20px 16px; }
     }
   </style>
 </head>
@@ -706,7 +787,7 @@
   <section id="hero">
     <div class="hero-dotgrid"></div>
     <div class="container" style="display:contents;">
-      <div class="hero-content reveal" style="padding-left: max(24px, calc((100vw - 1100px) / 2));">
+      <div class="hero-content reveal" style="padding-left: max(24px, calc((100vw - 1100px) / 2)); padding-right: max(24px, calc((100vw - 1100px) / 2));">
         <div class="hero-eyebrow">Valet Trash Service</div>
         <h1>
           Trash day,<br />
@@ -1083,7 +1164,8 @@
   <section id="cta-band">
     <div class="container">
       <div class="cta-band-inner">
-        <div class="section-label reveal" style="justify-content:center;">Ready to get started</div>
+        <div class="section-label reveal" style="justify-content:center; display:inline-flex;">Ready to get started</div>
+        <br />
         <h2 class="reveal">Your residents deserve <span class="accent">better.</span></h2>
         <p class="reveal">It takes less than 5 minutes to get a custom quote. No commitment, no sales pressure — just a plan that works for your property.</p>
         <a href="#contact" class="btn-primary reveal">

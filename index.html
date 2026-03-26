@@ -751,6 +751,49 @@
       .noi-calculator { padding: 20px 16px; }
     }
 
+    /* ── Includes grid (replaces services multi-card) ── */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 52px;
+    }
+    .include-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .include-card:hover {
+      border-color: oklch(0.40 0.12 var(--svc-hue, 158));
+      transform: translateY(-3px);
+    }
+    .include-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: oklch(0.38 0.10 var(--svc-hue, 158)); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .include-card:hover .include-icon {
+      background: oklch(0.44 0.13 var(--svc-hue, 158));
+      box-shadow: 0 0 18px oklch(0.60 0.14 var(--svc-hue, 158) / 0.25);
+    }
+    .include-icon svg { color: oklch(0.76 0.16 var(--svc-hue, 158)); }
+    .include-title {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 0.95rem; color: var(--fg); margin-bottom: 8px;
+    }
+    .include-desc { font-size: 0.88rem; color: var(--fg-muted); line-height: 1.65; }
+
+    @media (max-width: 900px) {
+      .includes-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    }
+    @media (max-width: 540px) {
+      .includes-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── IMPROVEMENT 1: Step connector timeline ──────── */
     .steps-connector {
       display: flex; align-items: center; gap: 0;
@@ -865,7 +908,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#services">The Service</a></li>
       <li><a href="#managers">For Communities</a></li>
       <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
     </ul>
@@ -877,7 +920,7 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
     <a href="#how-it-works" class="mobile-link">How It Works</a>
-    <a href="#services" class="mobile-link">Services</a>
+    <a href="#services" class="mobile-link">The Service</a>
     <a href="#managers" class="mobile-link">For Communities</a>
     <a href="#testimonials" class="mobile-link">Reviews</a>
     <a href="#contact" class="mobile-link m-cta">Get a Free Quote →</a>
@@ -1173,72 +1216,60 @@
   <!-- SERVICES -->
   <section id="services">
     <div class="container">
-      <div class="services-layout">
-        <div class="services-sticky">
-          <div class="section-label reveal">Services</div>
-          <h2 class="reveal">Everything your community needs.</h2>
-          <p class="section-sub reveal">Start with doorstep pickup and build from there. We bundle cleanly so property managers can offer a full-service experience.</p>
-          <a href="#contact" class="btn-primary reveal" style="display:inline-flex; margin-top:8px;">
-            Request a Custom Bundle
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+      <div class="section-label reveal">The Service</div>
+      <h2 class="reveal" style="max-width:600px;">Doorstep trash pickup.<br/>Done right, every night.</h2>
+      <p class="section-sub reveal" style="max-width:560px;">One service. No upsells. We pick up trash from every unit doorstep and take it to the dumpster — 5 to 7 nights a week, quietly and on schedule.</p>
+
+      <div class="includes-grid">
+        <div class="include-card reveal">
+          <div class="include-icon" style="--svc-hue:158">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="include-title">Door-to-Dumpster Pickup</div>
+          <p class="include-desc">Valets walk every hallway and collect bags directly from each unit doorstep — residents never leave their floor.</p>
         </div>
-        <div class="service-cards">
-          <div class="service-card reveal" style="--svc-hue: 158">
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
-            </div>
-            <div>
-              <div class="service-name">Doorstep Trash Pickup</div>
-              <p class="service-desc">5–7 nights per week, door-to-dumpster collection. Includes a 13-gal bin for each unit. Our core service — zero hassle for residents, zero drama for management.</p>
-            </div>
+        <div class="include-card reveal" style="transition-delay:0.08s">
+          <div class="include-icon" style="--svc-hue:195">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <div class="service-card reveal" style="transition-delay:0.06s; --svc-hue: 195">
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            </div>
-            <div>
-              <div class="service-name">Recycling Pickup <span class="badge-addon">Add-on</span></div>
-              <p class="service-desc">Separate recycling collection handled right alongside trash pickup. Keeps your community compliant and eco-conscious residents happy.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay:0.12s; --svc-hue: 50">
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            </div>
-            <div>
-              <div class="service-name">Bulk Item Removal <span class="badge-addon">Add-on</span></div>
-              <p class="service-desc">Furniture, appliances, move-out clutter — we schedule and haul it away. Saves your maintenance team the headache and keeps the property looking sharp.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay:0.18s; --svc-hue: 25">
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M11 6C5.5 7.5 4 11.5 4 14.5a6.5 6.5 0 0 0 13 0 6 6 0 0 0-3.5-5.5"/></svg>
-            </div>
-            <div>
-              <div class="service-name">Dog Park & Pet Waste Cleanup <span class="badge-addon">Add-on</span></div>
-              <p class="service-desc">Bag station restocking and pet waste removal keeps your outdoor amenities spotless — and your non-pet residents happy.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay:0.24s; --svc-hue: 290">
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <div class="service-name">Common Area Porter Service <span class="badge-addon">Add-on</span></div>
-              <p class="service-desc">Lobbies, breezeways, mailrooms — routine litter pickup and light maintenance that keeps shared spaces looking move-in ready, every day.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay:0.30s; --svc-hue: 215">
-            <div class="service-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-            </div>
-            <div>
-              <div class="service-name">Pressure Washing <span class="badge-addon">Add-on</span></div>
-              <p class="service-desc">Dumpster pad deodorization, parking lots, sidewalks, and breezeways. One call, done. Keeps odors and bacteria from building up at the source.</p>
-            </div>
-          </div>
+          <div class="include-title">5–7 Nights a Week</div>
+          <p class="include-desc">Flexible scheduling to match your property's needs. Most communities run 5 nights minimum — no trash sitting out over weekends.</p>
         </div>
+        <div class="include-card reveal" style="transition-delay:0.16s">
+          <div class="include-icon" style="--svc-hue:50">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+          </div>
+          <div class="include-title">13-Gallon Bin Included</div>
+          <p class="include-desc">Each unit gets a ClearStep-branded 13-gallon bin provided as part of the service. No extra equipment to buy or manage.</p>
+        </div>
+        <div class="include-card reveal" style="transition-delay:0.24s">
+          <div class="include-icon" style="--svc-hue:290">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="include-title">Uniformed, Vetted Team</div>
+          <p class="include-desc">Background-checked valets in uniform — so residents feel safe with someone working their hallways after dark.</p>
+        </div>
+        <div class="include-card reveal" style="transition-delay:0.32s">
+          <div class="include-icon" style="--svc-hue:215">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="include-title">Fully Licensed &amp; Insured</div>
+          <p class="include-desc">Zero liability on your end. We carry the coverage so property managers can offer this amenity worry-free.</p>
+        </div>
+        <div class="include-card reveal" style="transition-delay:0.40s">
+          <div class="include-icon" style="--svc-hue:25">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 4 12 14.01 9 11.01"/><line x1="22" y1="4" x2="22" y2="4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="include-title">99% On-Time Show-Up Rate</div>
+          <p class="include-desc">If your community is on our schedule, we're there. No excuses, no uncovered nights, no surprises for your residents.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:48px;" class="reveal">
+        <a href="#contact" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Get a Quote for Your Property
+        </a>
       </div>
     </div>
   </section>
@@ -1469,14 +1500,13 @@
               <input type="text" id="property" name="property" placeholder="Riverfront Apartments, 123 Main St" />
             </div>
             <div class="form-group">
-              <label for="services-select">Services Interested In</label>
-              <select id="services-select" name="services">
-                <option value="">Select services</option>
-                <option value="trash-only">Doorstep Trash Only</option>
-                <option value="trash-recycling">Trash + Recycling</option>
-                <option value="trash-bulk">Trash + Bulk Removal</option>
-                <option value="full-bundle">Full Service Bundle</option>
-                <option value="not-sure">Not Sure — Tell Me My Options</option>
+              <label for="services-select">How Many Nights Per Week?</label>
+              <select id="services-select" name="nights_per_week">
+                <option value="">Select frequency</option>
+                <option value="5">5 nights / week</option>
+                <option value="6">6 nights / week</option>
+                <option value="7">7 nights / week</option>
+                <option value="not-sure">Not sure — advise me</option>
               </select>
             </div>
             <div class="form-group">
@@ -1512,7 +1542,7 @@
       </a>
       <ul class="footer-links">
         <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">The Service</a></li>
         <li><a href="#managers">For Communities</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>

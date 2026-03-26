@@ -471,11 +471,7 @@
       display: flex; flex-direction: column; align-items: center;
       margin-bottom: 32px;
     }
-    .local-flag {
-      margin-bottom: 20px; filter: drop-shadow(0 4px 20px rgba(0,57,90,0.3));
-      border-radius: 8px; overflow: hidden; border: 2px solid oklch(0.3 0.01 255);
-    }
-    .local-flag svg { display: block; }
+
     .local-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: oklch(0.16 0.02 158); border: 1px solid oklch(0.28 0.06 158);
@@ -1468,23 +1464,6 @@
   <section id="why">
     <div class="container">
       <div class="local-hero reveal">
-        <div class="local-flag reveal-scale">
-          <!-- Wichita Flag SVG -->
-          <svg viewBox="0 0 600 400" width="180" height="120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wichita city flag">
-            <rect width="600" height="400" fill="#fff"/>
-            <!-- Red rays from off-center blue sun -->
-            <polygon points="200,200 600,0 600,133" fill="#EE3524"/>
-            <polygon points="200,200 600,267 600,400" fill="#EE3524"/>
-            <polygon points="200,200 0,333 0,400 200,400" fill="#EE3524"/>
-            <!-- White gaps between rays are handled by white background -->
-            <!-- Blue sun circle -->
-            <circle cx="200" cy="200" r="72" fill="#00395A"/>
-            <!-- White Zia/Hogan symbol on blue sun -->
-            <line x1="200" y1="148" x2="200" y2="252" stroke="#fff" stroke-width="8"/>
-            <line x1="148" y1="200" x2="252" y2="200" stroke="#fff" stroke-width="8"/>
-            <circle cx="200" cy="200" r="18" fill="none" stroke="#fff" stroke-width="6"/>
-          </svg>
-        </div>
         <div class="local-badge reveal">
           <span class="local-badge-text">🏠 Wichita Local</span>
         </div>
@@ -1843,7 +1822,10 @@
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <p style="margin-bottom:6px;">Proudly serving Wichita, Derby, Andover, Maize, Goddard &amp; surrounding communities.</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:8px;">
+        <img src="wichita-flag.jpg" alt="#ILoveWichita flag" width="48" height="32" style="border-radius:4px; object-fit:cover; border:1px solid var(--border);">
+        <p style="margin:0; color:var(--fg-muted); font-size:0.85rem;">Proudly serving Wichita, Derby, Andover, Maize, Goddard &amp; surrounding communities.</p>
+      </div>
       <p>© 2026 Valet Property Solutions — a DBA of All in 1 Realty LLC. All rights reserved.</p>
     </div>
   </footer>

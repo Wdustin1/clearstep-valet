@@ -169,9 +169,9 @@
     #hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      padding-top: 68px;
+      padding: 68px max(40px, calc((100vw - var(--max-w)) / 2)) 0;
       position: relative;
       overflow: hidden;
     }
@@ -217,15 +217,15 @@
     }
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.6rem, 5vw, 4.2rem);
-      font-weight: 800; line-height: 1.1;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      font-weight: 800; line-height: 1.08;
       letter-spacing: -0.02em; color: var(--fg);
       margin-bottom: 20px;
     }
     h1 .accent { color: var(--accent); }
     .hero-sub {
       font-size: clamp(1rem, 1.6vw, 1.15rem);
-      color: var(--fg-muted); max-width: 480px;
+      color: var(--fg-muted); max-width: 540px;
       line-height: 1.7; margin-bottom: 40px;
     }
     .btn-group { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -252,7 +252,7 @@
 
     .hero-visual {
       display: flex; align-items: center; justify-content: center;
-      position: relative; z-index: 1; padding: 40px;
+      position: relative; z-index: 1; padding: 20px;
     }
     .hero-icon-wrap {
       position: relative;
@@ -1138,7 +1138,7 @@
       </svg>
     </div>
     <div class="container" style="display:contents;">
-      <div class="hero-content reveal" style="padding-left: max(24px, calc((100vw - 1100px) / 2)); padding-right: max(24px, calc((100vw - 1100px) / 2));">
+      <div class="hero-content reveal">
         <div class="hero-eyebrow">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Wichita &amp; surrounding areas
@@ -1163,7 +1163,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-icon-wrap">
-          <svg width="280" height="300" viewBox="0 0 280 300" fill="none">
+          <svg width="340" height="365" viewBox="0 0 280 300" fill="none">
             <!-- Door frame -->
             <rect x="70" y="40" width="148" height="212" rx="10" fill="oklch(0.17 0.014 255)" stroke="oklch(0.30 0.012 255)" stroke-width="2"/>
             <!-- Door panels -->

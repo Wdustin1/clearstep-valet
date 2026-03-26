@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearStep Valet — Property Manager Pitch Sheet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #16a34a;
+      --green-light: #4ade80;
+      --green-pale: #f0fdf4;
+      --green-mid:  #dcfce7;
+      --dark:       #0f172a;
+      --mid:        #334155;
+      --muted:      #64748b;
+      --border:     #e2e8f0;
+      --bg:         #ffffff;
+      --font:       'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    html, body {
+      width: 8.5in;
+      min-height: 11in;
+      background: #f1f5f9;
+      font-family: var(--font);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: var(--bg);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Header strip ── */
+    .header {
+      background: var(--dark);
+      padding: 28px 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-top: 3px;
+      letter-spacing: 0.03em;
+    }
+    .header-right {
+      text-align: right;
+    }
+    .header-contact {
+      font-size: 11.5px;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+    .header-contact strong {
+      color: #fff;
+    }
+    .header-url {
+      color: var(--green-light);
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ── Green accent bar ── */
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #16a34a 0%, #4ade80 60%, #16a34a 100%);
+    }
+
+    /* ── Hero statement ── */
+    .hero-statement {
+      background: var(--green-pale);
+      padding: 22px 40px;
+      border-bottom: 1px solid var(--green-mid);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .hero-headline {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      flex: 1;
+    }
+    .hero-headline span {
+      color: var(--green);
+    }
+    .hero-sub-text {
+      font-size: 11.5px;
+      color: var(--mid);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .hero-divider {
+      width: 1px;
+      height: 48px;
+      background: var(--green-mid);
+    }
+
+    /* ── Main content ── */
+    .content {
+      flex: 1;
+      padding: 24px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* ── Section blocks ── */
+    .block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .block-title {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--green-mid);
+      margin-bottom: 2px;
+    }
+    .block.full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* ── What's included checklist ── */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+    .check-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .check-circle svg {
+      display: block;
+    }
+    .checklist li strong {
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    /* ── NOI math panel ── */
+    .noi-panel {
+      background: var(--dark);
+      border-radius: 10px;
+      padding: 18px 20px;
+      color: #fff;
+    }
+    .noi-panel-title {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 12px;
+    }
+    .noi-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .noi-table tr td {
+      font-size: 11px;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      line-height: 1.3;
+    }
+    .noi-table tr:last-child td {
+      border-bottom: none;
+    }
+    .noi-table td:first-child {
+      color: #94a3b8;
+    }
+    .noi-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+      color: #fff;
+    }
+    .noi-table tr.highlight td {
+      padding-top: 8px;
+      font-size: 12px;
+    }
+    .noi-table tr.highlight td:first-child {
+      color: var(--green-light);
+      font-weight: 700;
+    }
+    .noi-table tr.highlight td:last-child {
+      color: var(--green-light);
+      font-size: 15px;
+    }
+    .noi-note {
+      font-size: 9px;
+      color: #64748b;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* ── Why local panel ── */
+    .local-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .local-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 10px 12px;
+      background: var(--green-pale);
+      border-radius: 7px;
+      border-left: 3px solid var(--green);
+    }
+    .local-item-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .local-item-desc {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* ── How it works ── */
+    .steps-row {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+    .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 12px;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--green-light);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .step-num {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--green);
+    }
+    .step-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .step-desc {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .steps-bg {
+      background: #f8fafc;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: flex;
+      gap: 0;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 12px 8px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 9.5px;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-top: 3px;
+    }
+    .stats-bg {
+      background: var(--green-pale);
+      border-radius: 8px;
+      border: 1px solid var(--green-mid);
+      overflow: hidden;
+    }
+
+    /* ── CTA footer ── */
+    .cta-footer {
+      background: var(--green);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cta-left h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .cta-left p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 2px;
+    }
+    .cta-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1px;
+    }
+    .cta-contact-label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cta-contact-val {
+      font-size: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .cta-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.2);
+    }
+    .qr-placeholder {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .qr-placeholder span {
+      font-size: 7px;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* ── Print ── */
+    @media print {
+      html, body { background: #fff; }
+      .page { box-shadow: none; }
+    }
+
+    @media screen {
+      body { padding: 24px; }
+      .page {
+        box-shadow: 0 4px 40px rgba(0,0,0,0.15);
+        border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-brand">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="8" fill="#0d2b17"/>
+        <defs>
+          <linearGradient id="lg1" x1="8" y1="32" x2="30" y2="14" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#16a34a"/>
+            <stop offset="100%" stop-color="#4ade80"/>
+          </linearGradient>
+        </defs>
+        <path d="M8 32 L8 26 L15 26 L15 20 L22 20 L22 14 L30 14" stroke="url(#lg1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="30" cy="14" r="3.5" fill="#4ade80"/>
+      </svg>
+      <div>
+        <div class="brand-name">ClearStep Valet</div>
+        <div class="brand-tagline">Doorstep Trash Pickup · Wichita, KS</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-contact">
+        <strong>Shannon Honse</strong> · All In One Reality LLC<br/>
+        <a class="header-url" href="https://clearstep-valet.vercel.app">clearstep-valet.vercel.app</a>
+        &nbsp;·&nbsp;info@clearstepvalet.com
+      </div>
+    </div>
+  </div>
+  <div class="accent-bar"></div>
+
+  <!-- Hero statement -->
+  <div class="hero-statement">
+    <div class="hero-headline">
+      Your residents want it.<br/>
+      You <span>profit from it.</span><br/>
+      We handle everything.
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-sub-text">
+      ClearStep Valet collects trash from every unit doorstep, 5–7 nights a week. Residents love it. Property managers earn a net gain on every unit. Starting at <strong>$10/unit/month</strong> — most properties make more than they spend.
+    </div>
+  </div>
+
+  <!-- Main content grid -->
+  <div class="content">
+
+    <!-- LEFT COL -->
+
+    <!-- What's included -->
+    <div class="block">
+      <div class="block-title">What's Included</div>
+      <ul class="checklist">
+        <li>
+          <div class="check-circle"><svg width="9" height="9" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span><strong>Door-to-dumpster pickup</strong> every scheduled night — valets walk every hallway, collect bags, haul to the compactor.</span>
+        </li>
+        <li>
+          <div class="check-circle"><svg width="9" height="9" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span><strong>5–7 nights/week</strong> on your schedule. Flexible to your property's needs.</span>
+        </li>
+        <li>
+          <div class="check-circle"><svg width="9" height="9" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span><strong>13-gallon bin provided</strong> for every unit. No equipment cost to you or your residents.</span>
+        </li>
+        <li>
+          <div class="check-circle"><svg width="9" height="9" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span><strong>Background-checked, uniformed valets.</strong> Residents know who's in their hallway.</span>
+        </li>
+        <li>
+          <div class="check-circle"><svg width="9" height="9" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span><strong>Fully licensed &amp; insured.</strong> COI available naming your property as additional insured.</span>
+        </li>
+        <li>
+          <div class="check-circle"><svg width="9" height="9" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span><strong>Local owner-operated.</strong> One phone number. Real accountability. Not a national call center.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT COL: NOI Math -->
+    <div class="block">
+      <div class="block-title">The Math — 150-Unit Property Example</div>
+      <div class="noi-panel">
+        <div class="noi-panel-title">💰 Property Manager NOI Analysis</div>
+        <table class="noi-table">
+          <tr>
+            <td>You charge residents / unit / mo</td>
+            <td>$25.00</td>
+          </tr>
+          <tr>
+            <td>ClearStep rate / unit / mo</td>
+            <td>$10.00</td>
+          </tr>
+          <tr>
+            <td>Your spread per unit</td>
+            <td>$15.00</td>
+          </tr>
+          <tr>
+            <td>Monthly revenue (150 units)</td>
+            <td>$3,750</td>
+          </tr>
+          <tr>
+            <td>Monthly ClearStep cost</td>
+            <td>−$1,500</td>
+          </tr>
+          <tr class="highlight">
+            <td>Your monthly NET gain</td>
+            <td>+$2,250</td>
+          </tr>
+          <tr>
+            <td>Annual NOI increase</td>
+            <td>$27,000</td>
+          </tr>
+          <tr>
+            <td>Est. property value boost <small>(6% cap rate)</small></td>
+            <td style="color:#4ade80">+$450,000</td>
+          </tr>
+        </table>
+        <div class="noi-note">*Based on $25/unit resident charge and $10/unit ClearStep rate. Resident fee added to monthly rent or as line item. No out-of-pocket cost to your property.</div>
+      </div>
+    </div>
+
+    <!-- How it works — full width -->
+    <div class="block full-width">
+      <div class="block-title">How It Works — 3 Steps for Residents</div>
+      <div class="steps-bg">
+        <div class="steps-row">
+          <div class="step">
+            <div class="step-num">STEP 01</div>
+            <div class="step-title">Set it outside the door</div>
+            <div class="step-desc">Residents place their trash bag in the provided bin outside their door between 7–10 PM. No trips to the dumpster.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">STEP 02</div>
+            <div class="step-title">We collect overnight</div>
+            <div class="step-desc">Our team walks every hallway between 8 PM–midnight, collecting quietly and professionally. Done before sunrise.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">STEP 03</div>
+            <div class="step-title">Clean hallway by morning</div>
+            <div class="step-desc">Everything goes to the community dumpster or compactor. No mess, no odors, no overflowing bins. Residents wake up to a clean hallway.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="block full-width">
+      <div class="stats-bg">
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-num">#1</div>
+            <div class="stat-label">Rated resident amenity in multifamily housing nationally</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">99%</div>
+            <div class="stat-label">On-time show-up rate — every scheduled night</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">$0</div>
+            <div class="stat-label">Out-of-pocket cost to your property to offer this amenity</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5–7×</div>
+            <div class="stat-label">Per week pickup — flexible to your community's schedule</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why local — full width -->
+    <div class="block full-width">
+      <div class="block-title">Why ClearStep vs. National Providers</div>
+      <div class="local-grid">
+        <div class="local-item">
+          <div class="local-item-title">Local owner, local accountability</div>
+          <div class="local-item-desc">Shannon answers her phone. Not a ticketing system. Not a regional manager. You have one contact who knows your property.</div>
+        </div>
+        <div class="local-item">
+          <div class="local-item-title">No corporate markup</div>
+          <div class="local-item-desc">National providers charge $12–15+/unit. Our local operation starts at $10/unit — more NOI for you, same premium service for residents.</div>
+        </div>
+        <div class="local-item">
+          <div class="local-item-title">Flexible contract terms</div>
+          <div class="local-item-desc">Month-to-month or annual. No 3-year lock-in. We earn your business every month by showing up.</div>
+        </div>
+        <div class="local-item">
+          <div class="local-item-title">Wichita-focused</div>
+          <div class="local-item-desc">We're not splitting our attention across 50 markets. Wichita is our market. Your property gets our full attention.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA Footer -->
+  <div class="cta-footer">
+    <div class="cta-left">
+      <h3>Ready to add a premium amenity and boost your NOI?</h3>
+      <p>Contact us for a free, no-pressure quote. We'll build a custom number for your exact property size.</p>
+    </div>
+    <div class="cta-right">
+      <div class="cta-contact-item">
+        <span class="cta-contact-label">Email</span>
+        <span class="cta-contact-val">info@clearstepvalet.com</span>
+      </div>
+      <div class="cta-divider"></div>
+      <div class="cta-contact-item">
+        <span class="cta-contact-label">Website</span>
+        <span class="cta-contact-val">clearstep-valet.vercel.app</span>
+      </div>
+      <div class="cta-divider"></div>
+      <div class="qr-placeholder">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <!-- QR code pattern suggestion -->
+          <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <rect x="5" y="5" width="6" height="6" rx="0.5" fill="white"/>
+          <rect x="18" y="2" width="12" height="12" rx="1.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <rect x="21" y="5" width="6" height="6" rx="0.5" fill="white"/>
+          <rect x="2" y="18" width="12" height="12" rx="1.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <rect x="5" y="21" width="6" height="6" rx="0.5" fill="white"/>
+          <rect x="18" y="18" width="4" height="4" rx="0.5" fill="white"/>
+          <rect x="24" y="18" width="4" height="4" rx="0.5" fill="white"/>
+          <rect x="18" y="24" width="4" height="4" rx="0.5" fill="white"/>
+          <rect x="24" y="24" width="4" height="4" rx="0.5" fill="white"/>
+        </svg>
+        <span>Scan for<br/>website</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

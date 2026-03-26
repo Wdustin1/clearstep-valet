@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Logo Preview</title>
+  <style>
+    body { background: #e8e8e8; display: flex; flex-direction: column; gap: 32px; padding: 48px; align-items: flex-start; font-family: system-ui, sans-serif; }
+    .card { background: white; padding: 28px 36px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,.1); }
+    .card.dark { background: #1A6B35; }
+    .label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; font-weight: 600; }
+    .dark .label { color: rgba(255,255,255,.4); }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="label">Horizontal Lockup — light bg</div>
+    <img src="logo.svg" style="height: 90px; display: block;">
+  </div>
+
+  <div class="card dark">
+    <div class="label">Horizontal Lockup — dark bg</div>
+    <img src="logo.svg" style="height: 90px; display: block; filter: brightness(0) invert(1);">
+  </div>
+
+  <div class="card" style="display:flex;gap:24px;align-items:center;">
+    <div>
+      <div class="label">Icon — 120px</div>
+      <img src="logo-icon.svg" style="height: 120px; display: block;">
+    </div>
+    <div>
+      <div class="label">Icon — 64px</div>
+      <img src="logo-icon.svg" style="height: 64px; display: block;">
+    </div>
+    <div>
+      <div class="label">Icon — 32px</div>
+      <img src="logo-icon.svg" style="height: 32px; display: block;">
+    </div>
+  </div>
+
+  <div class="card dark" style="display:flex;gap:24px;align-items:center;">
+    <div>
+      <div class="label">Icon on green</div>
+      <img src="logo-icon.svg" style="height: 100px; display: block;">
+    </div>
+  </div>
+
+</body>
+</html>

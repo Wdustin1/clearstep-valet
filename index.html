@@ -84,9 +84,46 @@
     .reveal {
       opacity: 0;
       transform: translateY(22px);
-      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Slide from left */
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    /* Slide from right */
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Scale up from center */
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    /* Stagger children — add to parent, children get delays */
+    .stagger-children.visible > * { opacity: 1; transform: translateY(0); }
+    .stagger-children > * {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .stagger-children > *:nth-child(1) { transition-delay: 0s; }
+    .stagger-children > *:nth-child(2) { transition-delay: 0.08s; }
+    .stagger-children > *:nth-child(3) { transition-delay: 0.16s; }
+    .stagger-children > *:nth-child(4) { transition-delay: 0.24s; }
+    .stagger-children > *:nth-child(5) { transition-delay: 0.32s; }
+    .stagger-children > *:nth-child(6) { transition-delay: 0.4s; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1300,8 +1337,8 @@
         </div>
       </div>
 
-      <div class="steps-grid">
-        <div class="step-card reveal">
+      <div class="steps-grid stagger-children reveal">
+        <div class="step-card">
           <div class="step-num">01</div>
           <div class="step-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1311,7 +1348,7 @@
           <div class="step-title">Set It Outside Your Door</div>
           <p class="step-desc">Each unit gets a provided 13-gallon trash bin. Between 7–10 PM, just set your bag in or beside it outside your door. That's it.</p>
         </div>
-        <div class="step-card reveal" style="transition-delay:0.1s">
+        <div class="step-card">
           <div class="step-num">02</div>
           <div class="step-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1321,7 +1358,7 @@
           <div class="step-title">We Collect Overnight</div>
           <p class="step-desc">Our uniformed, background-checked team walks every hallway between 8 PM and midnight — collecting bags quietly and efficiently.</p>
         </div>
-        <div class="step-card reveal" style="transition-delay:0.2s">
+        <div class="step-card">
           <div class="step-num">03</div>
           <div class="step-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1342,43 +1379,43 @@
       <h2 class="reveal" style="max-width:600px;">Doorstep trash pickup.<br/>Done right, every night.</h2>
       <p class="section-sub reveal" style="max-width:560px;">One service. No upsells. We pick up trash from every unit doorstep and take it to the dumpster — 5 to 7 nights a week, quietly and on schedule.</p>
 
-      <div class="includes-grid">
-        <div class="include-card reveal">
+      <div class="includes-grid stagger-children reveal">
+        <div class="include-card">
           <div class="include-icon" style="--svc-hue:158">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <div class="include-title">Door-to-Dumpster Pickup</div>
           <p class="include-desc">Valets walk every hallway and collect bags directly from each unit doorstep — residents never leave their floor.</p>
         </div>
-        <div class="include-card reveal" style="transition-delay:0.08s">
+        <div class="include-card">
           <div class="include-icon" style="--svc-hue:195">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="include-title">5–7 Nights a Week</div>
           <p class="include-desc">Flexible scheduling to match your property's needs. Most communities run 5 nights minimum — no trash sitting out over weekends.</p>
         </div>
-        <div class="include-card reveal" style="transition-delay:0.16s">
+        <div class="include-card">
           <div class="include-icon" style="--svc-hue:50">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
           </div>
           <div class="include-title">13-Gallon Bin Included</div>
           <p class="include-desc">Each unit gets a Valet Property Solutions 13-gallon bin provided as part of the service. No extra equipment to buy or manage.</p>
         </div>
-        <div class="include-card reveal" style="transition-delay:0.24s">
+        <div class="include-card">
           <div class="include-icon" style="--svc-hue:290">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="include-title">Uniformed, Vetted Team</div>
           <p class="include-desc">Background-checked valets in uniform — so residents feel safe with someone working their hallways after dark.</p>
         </div>
-        <div class="include-card reveal" style="transition-delay:0.32s">
+        <div class="include-card">
           <div class="include-icon" style="--svc-hue:215">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="include-title">Fully Licensed &amp; Insured</div>
           <p class="include-desc">Zero liability on your end. We carry the coverage so property managers can offer this amenity worry-free.</p>
         </div>
-        <div class="include-card reveal" style="transition-delay:0.40s">
+        <div class="include-card">
           <div class="include-icon" style="--svc-hue:25">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 4 12 14.01 9 11.01"/><line x1="22" y1="4" x2="22" y2="4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
@@ -1404,29 +1441,29 @@
       <div class="section-label reveal">Why Valet Property Solutions</div>
       <h2 class="reveal">Local service. <br/>Real accountability.</h2>
       <p class="section-sub reveal">We're not a national franchise sending whoever shows up. We're a locally-run team that knows your property by name — and shows up every single night.</p>
-      <div class="why-grid">
-        <div class="why-card reveal">
+      <div class="why-grid stagger-children reveal">
+        <div class="why-card">
           <div class="why-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="why-card-title">Background-Checked, Uniformed Team</div>
           <p class="why-card-desc">Every valet is fully vetted and clearly identified — so residents feel safe when someone's working their hallway at night.</p>
         </div>
-        <div class="why-card reveal" style="transition-delay:0.1s">
+        <div class="why-card">
           <div class="why-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <div class="why-card-title">Flexible Contract Terms</div>
           <p class="why-card-desc">Month-to-month or annual agreements available. We'll structure a plan around your community's size, layout, and pickup schedule.</p>
         </div>
-        <div class="why-card reveal" style="transition-delay:0.2s">
+        <div class="why-card">
           <div class="why-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="why-card-title">Proven Model, Local Touch</div>
           <p class="why-card-desc">Valet trash is the most-used resident amenity in multifamily housing nationwide. We bring that proven service with someone who actually answers the phone.</p>
         </div>
-        <div class="why-card reveal" style="transition-delay:0.3s">
+        <div class="why-card">
           <div class="why-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
@@ -1444,8 +1481,8 @@
     <div class="container">
       <div class="managers-layout">
         <div>
-          <div class="section-label reveal">For Property Managers</div>
-          <h2 class="reveal">Add an amenity. Grow your NOI.</h2>
+          <div class="section-label reveal-left">For Property Managers</div>
+          <h2 class="reveal-left">Add an amenity. Grow your NOI.</h2>
           <p style="color:var(--fg-muted); margin-bottom: 32px;" class="reveal">Valet trash isn't just a perk — it's a revenue tool. Charge residents $20–35/month, pay us less, and pocket the difference while your residents love you for it.</p>
           <ul class="managers-list">
             <li class="reveal"><div class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Increase resident satisfaction and retention scores</li>
@@ -1457,7 +1494,7 @@
         </div>
 
         <!-- Interactive NOI Calculator -->
-        <div class="noi-calculator reveal" style="transition-delay:0.2s">
+        <div class="noi-calculator reveal-right" style="transition-delay:0.15s">
           <div class="noi-calculator-header">📊 NOI Calculator — Drag to explore</div>
           <div class="noi-slider-group">
             <div class="noi-slider-label">
@@ -1513,8 +1550,8 @@
     <div class="container">
       <div class="section-label reveal">From The Community</div>
       <h2 class="reveal">Residents love it. Managers keep it.</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
+      <div class="testimonials-grid stagger-children reveal">
+        <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-text">"I didn't think I'd actually care about trash pickup, but never dragging a bag down two flights at 10 PM? Game changer. I tell everyone about this complex now."</p>
           <div class="testimonial-footer">
@@ -1525,7 +1562,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal" style="transition-delay:0.1s">
+        <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-text">"Our dumpster overflow complaints dropped to nearly zero after we added valet trash. Residents listed it in positive reviews. Renewal rates went up too."</p>
           <div class="testimonial-footer">
@@ -1536,7 +1573,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card reveal" style="transition-delay:0.2s">
+        <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-text">"We tried two other services before. This is the first time it's been consistent. Every night, hallways clear, no drama. That's all we needed."</p>
           <div class="testimonial-footer">
@@ -1801,7 +1838,7 @@
         if (e.isIntersecting) { e.target.classList.add('visible'); }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(el => observer.observe(el));
 
     // ── Active nav highlight ─────────────────────────────
     const sections = document.querySelectorAll('section[id], div[id="stats"]');

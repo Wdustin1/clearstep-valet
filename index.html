@@ -466,6 +466,35 @@
 
     /* ── WHY VPS ──────────────────────────────────────── */
     #why { background: var(--bg-surface); }
+    /* ── LOCAL PRIDE ──────────────────────────────────── */
+    .local-hero {
+      display: flex; flex-direction: column; align-items: center;
+      margin-bottom: 32px;
+    }
+    .local-flag {
+      margin-bottom: 20px; filter: drop-shadow(0 4px 20px rgba(0,57,90,0.3));
+      border-radius: 8px; overflow: hidden; border: 2px solid oklch(0.3 0.01 255);
+    }
+    .local-flag svg { display: block; }
+    .local-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: oklch(0.16 0.02 158); border: 1px solid oklch(0.28 0.06 158);
+      border-radius: 100px; padding: 8px 20px;
+    }
+    .local-badge-text {
+      font-family: var(--font-display); font-size: 0.85rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: oklch(0.73 0.17 158);
+    }
+    .local-callout {
+      max-width: 740px; margin: 0 auto;
+    }
+    .local-callout-inner {
+      background: oklch(0.14 0.01 255); border-left: 3px solid oklch(0.73 0.17 158);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+    }
+
     .why-grid {
       display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 2px;
@@ -1438,9 +1467,41 @@
   <!-- WHY VPS -->
   <section id="why">
     <div class="container">
+      <div class="local-hero reveal">
+        <div class="local-flag reveal-scale">
+          <!-- Wichita Flag SVG -->
+          <svg viewBox="0 0 600 400" width="180" height="120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wichita city flag">
+            <rect width="600" height="400" fill="#fff"/>
+            <!-- Red rays from off-center blue sun -->
+            <polygon points="200,200 600,0 600,133" fill="#EE3524"/>
+            <polygon points="200,200 600,267 600,400" fill="#EE3524"/>
+            <polygon points="200,200 0,333 0,400 200,400" fill="#EE3524"/>
+            <!-- White gaps between rays are handled by white background -->
+            <!-- Blue sun circle -->
+            <circle cx="200" cy="200" r="72" fill="#00395A"/>
+            <!-- White Zia/Hogan symbol on blue sun -->
+            <line x1="200" y1="148" x2="200" y2="252" stroke="#fff" stroke-width="8"/>
+            <line x1="148" y1="200" x2="252" y2="200" stroke="#fff" stroke-width="8"/>
+            <circle cx="200" cy="200" r="18" fill="none" stroke="#fff" stroke-width="6"/>
+          </svg>
+        </div>
+        <div class="local-badge reveal">
+          <span class="local-badge-text">🏠 Wichita Local</span>
+        </div>
+      </div>
+
       <div class="section-label reveal">Why Valet Property Solutions</div>
-      <h2 class="reveal">Local service. <br/>Real accountability.</h2>
-      <p class="section-sub reveal">We're not a national franchise sending whoever shows up. We're a locally-run team that knows your property by name — and shows up every single night.</p>
+      <h2 class="reveal">We live where you live.</h2>
+      <p class="section-sub reveal">We're not a franchise out of Dallas. We're not a call center in another state. We live in Wichita, we work in Wichita, and when you call us — a real person from <em>here</em> picks up.</p>
+
+      <div class="local-callout reveal" style="margin-bottom: 40px;">
+        <div class="local-callout-inner">
+          <p style="font-size: 1.05rem; line-height: 1.7; color: var(--fg-muted); margin: 0;">
+            We know the difference between West Wichita and East Wichita. We know what "Kellogg traffic" means for scheduling. We know your properties because we drive past them every day. <strong style="color:var(--fg);">This isn't a side gig — it's our business, and your community is our reputation.</strong>
+          </p>
+        </div>
+      </div>
+
       <div class="why-grid stagger-children reveal">
         <div class="why-card">
           <div class="why-card-icon">
@@ -1451,17 +1512,17 @@
         </div>
         <div class="why-card">
           <div class="why-card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="why-card-title">Wichita-Based Operations</div>
+          <p class="why-card-desc">Our team lives here, works here, and builds relationships with every property we serve. No 1-800 number — you get a direct line to the people doing the work.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <div class="why-card-title">Flexible Contract Terms</div>
           <p class="why-card-desc">Month-to-month or annual agreements available. We'll structure a plan around your community's size, layout, and pickup schedule.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="oklch(0.73 0.17 158)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div class="why-card-title">Proven Model, Local Touch</div>
-          <p class="why-card-desc">Valet trash is the most-used resident amenity in multifamily housing nationwide. We bring that proven service with someone who actually answers the phone.</p>
         </div>
         <div class="why-card">
           <div class="why-card-icon">
@@ -1782,7 +1843,8 @@
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <p>© 2026 Valet Property Solutions. All rights reserved. Doorstep trash pickup for apartment communities in Wichita, KS and surrounding areas.</p>
+      <p style="margin-bottom:6px;">Proudly serving Wichita, Derby, Andover, Maize, Goddard &amp; surrounding communities.</p>
+      <p>© 2026 Valet Property Solutions — a DBA of All in 1 Realty LLC. All rights reserved.</p>
     </div>
   </footer>
 

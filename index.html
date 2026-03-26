@@ -794,6 +794,82 @@
       .includes-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Section separators ─────────────────────────── */
+    .section-sep {
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--border) 20%,
+        oklch(0.30 0.06 158) 50%,
+        var(--border) 80%,
+        transparent 100%
+      );
+      margin: 0;
+    }
+
+    /* ── FAQ accordion ───────────────────────────────── */
+    #faq { background: var(--bg); }
+    .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 4px;
+      font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+      color: var(--fg); text-align: left; gap: 16px;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q svg {
+      flex-shrink: 0; color: var(--accent-glow);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-item.open .faq-q { color: var(--accent); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1), padding 0.3s;
+      padding: 0 4px;
+    }
+    .faq-a-inner {
+      padding-bottom: 22px;
+      font-size: 0.93rem; color: var(--fg-muted); line-height: 1.75;
+    }
+    .faq-item.open .faq-a { max-height: 320px; }
+    .faq-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0 64px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 700px) { .faq-cols { grid-template-columns: 1fr; } }
+
+    /* ── Sticky mobile CTA ───────────────────────────── */
+    #mobile-cta-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: oklch(0.10 0.012 255 / 0.96);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 12px 20px;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    #mobile-cta-bar.visible { transform: translateY(0); }
+    #mobile-cta-bar a {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--accent); color: var(--bg);
+      font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+      border-radius: 8px; padding: 14px 20px;
+      text-decoration: none; width: 100%;
+      transition: filter 0.2s;
+    }
+    #mobile-cta-bar a:hover { filter: brightness(1.1); }
+    @media (max-width: 900px) { #mobile-cta-bar { display: block; } }
+
     /* ── IMPROVEMENT 1: Step connector timeline ──────── */
     .steps-connector {
       display: flex; align-items: center; gap: 0;
@@ -1020,13 +1096,16 @@
     </div>
     <div class="container" style="display:contents;">
       <div class="hero-content reveal" style="padding-left: max(24px, calc((100vw - 1100px) / 2)); padding-right: max(24px, calc((100vw - 1100px) / 2));">
-        <div class="hero-eyebrow">Valet Trash Service</div>
+        <div class="hero-eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Wichita &amp; surrounding areas
+        </div>
         <h1>
           Trash day,<br />
           without the <span class="accent">hassle.</span>
         </h1>
         <p class="hero-sub">
-          ClearStep picks up from every doorstep, every night — so your residents never have to drag trash to the dumpster again. The #1 amenity in luxury multifamily living.
+          ClearStep picks up from every doorstep, every night — so your residents never have to drag trash to the dumpster again. Starting at <strong style="color:var(--accent)">$10/unit/month.</strong>
         </p>
         <div class="btn-group">
           <a href="#contact" class="btn-primary">
@@ -1274,6 +1353,8 @@
     </div>
   </section>
 
+  <div class="section-sep"></div>
+
   <!-- WHY CLEARSTEP -->
   <section id="why">
     <div class="container">
@@ -1312,6 +1393,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-sep"></div>
 
   <!-- FOR MANAGERS -->
   <section id="managers">
@@ -1380,6 +1463,8 @@
     </div>
   </section>
 
+  <div class="section-sep"></div>
+
   <!-- TESTIMONIALS -->
   <section id="testimonials">
     <div class="container">
@@ -1422,6 +1507,82 @@
       </div>
     </div>
   </section>
+
+  <div class="section-sep"></div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-label reveal">FAQ</div>
+      <h2 class="reveal">Questions we hear all the time.</h2>
+      <p class="section-sub reveal" style="max-width:560px;">Straightforward answers for property managers and residents alike.</p>
+
+      <div class="faq-cols">
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              What if a resident misses the pickup window?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">The bag simply stays until the next scheduled pickup night. Valets only collect what's set out during the designated window (typically 7–10 PM). Residents are informed of the schedule at move-in.</div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Is there a long-term contract required?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">No. We offer both month-to-month and annual agreements. Most property managers prefer annual for the pricing consistency, but we're flexible. Get in touch and we'll work out what fits your property.</div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              What happens if there's a problem or a no-show?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">You contact us directly — not a call center. We're a local team and we answer. If a night gets missed for any reason, we make it right. Our 99% show-up rate isn't a marketing line; it's our standard.</div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Do residents pay directly or through rent?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">The property manager adds the fee to residents' monthly rent or as a separate line item — we bill the property directly. Residents never interact with us financially, which keeps it simple for everyone.</div></div>
+          </div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              How much does it cost?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">Pricing starts at $10/unit/month. Final pricing depends on your property size, number of pickup nights per week, and layout. Use our NOI calculator above to see what the numbers look like for your community, then reach out for a custom quote.</div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Where do you operate?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">We serve Wichita and the surrounding communities in the greater Wichita metro area. Not sure if your property is in our service area? Just reach out — we're growing and happy to discuss.</div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              What size properties do you work with?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">We work with communities from 50 units up to 500+. Smaller properties benefit just as much — in fact, the per-unit spread often works out better for medium-sized communities. Our NOI calculator can show you the numbers for your size.</div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Are your valets background checked?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">Yes, every member of our team is background checked before they set foot in any hallway. They wear uniforms so residents can identify them immediately. We take the trust of your residents seriously.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-sep"></div>
 
   <!-- CTA BAND -->
   <section id="cta-band">
@@ -1547,7 +1708,7 @@
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <p>© 2026 ClearStep Valet. All rights reserved. Doorstep trash pickup for apartment communities.</p>
+      <p>© 2026 ClearStep Valet. All rights reserved. Doorstep trash pickup for apartment communities in Wichita, KS and surrounding areas.</p>
     </div>
   </footer>
 
@@ -1719,6 +1880,54 @@
         alert('Something went wrong. Please email us directly at info@clearstepvalet.com');
       }
     });
+    // ── FAQ accordion ────────────────────────────────────
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Sticky mobile CTA bar ────────────────────────────
+    (function() {
+      var bar = document.getElementById('mobile-cta-bar');
+      if (!bar) return;
+      var hero = document.getElementById('hero');
+      var contact = document.getElementById('contact');
+      var heroObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (!e.isIntersecting) bar.classList.add('visible');
+          else bar.classList.remove('visible');
+        });
+      }, { threshold: 0.1 });
+      heroObs.observe(hero);
+      // Hide when contact section is visible
+      var contactObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) bar.classList.remove('visible');
+          else if (!hero.getBoundingClientRect().top > 0) bar.classList.add('visible');
+        });
+      }, { threshold: 0.2 });
+      contactObs.observe(contact);
+    })();
   </script>
+
+  <!-- Sticky mobile CTA bar -->
+  <div id="mobile-cta-bar">
+    <a href="#contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      Get a Free Quote
+    </a>
+  </div>
 </body>
 </html>

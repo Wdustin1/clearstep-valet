@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23386641'/><path d='M10 12h12M11 12l1 10h8l1-10' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M14 12V10h4v2' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -24,8 +24,8 @@
       --border:     oklch(0.23 0.012 255);
       --border-light: oklch(0.30 0.012 255);
       --radius:     10px;
-      --font-display: 'Syne', sans-serif;
-      --font-body:    'DM Sans', sans-serif;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
       --max-w: 1100px;
     }
 
@@ -92,7 +92,7 @@
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
       font-family: var(--font-display); font-weight: 800; font-size: 1.25rem;
-      color: var(--fg); text-decoration: none; letter-spacing: -0.02em;
+      color: var(--fg); text-decoration: none; letter-spacing: -0.01em;
     }
     .nav-links {
       display: flex; align-items: center; gap: 36px;
@@ -200,8 +200,8 @@
     h1 {
       font-family: var(--font-display);
       font-size: clamp(2.6rem, 5vw, 4.2rem);
-      font-weight: 800; line-height: 1.06;
-      letter-spacing: -0.04em; color: var(--fg);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.02em; color: var(--fg);
       margin-bottom: 20px;
     }
     h1 .accent { color: var(--accent); }
@@ -304,7 +304,7 @@
     .stat-item:last-child { border-right: none; }
     .stat-num {
       font-family: var(--font-display); font-size: 2.6rem; font-weight: 800;
-      color: var(--accent); letter-spacing: -0.04em; line-height: 1;
+      color: var(--accent); letter-spacing: -0.02em; line-height: 1;
       margin-bottom: 6px;
     }
     .stat-label { font-size: 0.85rem; color: var(--fg-muted); font-weight: 400; }
@@ -323,8 +323,8 @@
     h2 {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 800; letter-spacing: -0.03em;
-      line-height: 1.1; color: var(--fg); margin-bottom: 16px;
+      font-weight: 800; letter-spacing: -0.01em;
+      line-height: 1.15; color: var(--fg); margin-bottom: 16px;
     }
     .section-sub {
       color: var(--fg-muted); font-size: 1.05rem;

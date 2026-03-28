@@ -76,7 +76,7 @@ This is the reason properties sign up. We are handing them $36,000/year in new N
 We aren't starting from zero. Before seeking any funding, we've invested significant time building the operational foundation:
 
 - **Legal entity:** All in 1 Realty LLC is established and active
-- **Professional website:** Live at clearstep-valet.vercel.app — contact form, NOI calculator, service details, fully branded
+- **Professional website:** Live at valetpropertysolutions.com — contact form, NOI calculator, service details, fully branded
 - **Custom management app:** Android app built and tested for route management, employee tracking, nightly property reports (auto-generated PDF), in-app messaging between admin and valets, property/unit tracking with issue logging
 - **Brand identity:** Logo, color system, pitch materials designed and ready
 - **Market research:** Pricing validated against national competitors, target property list in development

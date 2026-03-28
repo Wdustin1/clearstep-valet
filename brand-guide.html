@@ -17,7 +17,7 @@
     }
     .page {
       width: 8.5in; height: 11in;
-      padding: 0.38in 0.48in 0.32in;
+      padding: 0.35in 0.45in 0.3in;
       position: relative;
       overflow: hidden;
     }
@@ -28,15 +28,15 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 10px;
-      border-bottom: 2px solid #000;
-      margin-bottom: 14px;
+      border-bottom: 3px solid #000;
+      margin-bottom: 12px;
     }
-    .header-left { display: flex; align-items: center; gap: 12px; }
-    .header img { height: 38px; }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .header img { height: 42px; }
     .header h1 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 20px; font-weight: 800; color: #000;
-      letter-spacing: -0.02em;
+      font-size: 26px; font-weight: 800; color: #000;
+      letter-spacing: -0.03em;
     }
     .header-right {
       font-size: 8px; color: #9CA3AF;
@@ -44,53 +44,52 @@
     }
 
     /* ── Grid ── */
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
 
     .section-label {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 7px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: 8px; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase;
       color: #6BBF2E; margin-bottom: 5px;
     }
 
     /* ── Colors ── */
-    .color-row { display: flex; gap: 6px; margin-bottom: 5px; }
+    .color-row { display: flex; gap: 5px; margin-bottom: 4px; }
     .swatch {
-      flex: 1; border-radius: 6px; overflow: hidden;
+      flex: 1; border-radius: 5px; overflow: hidden;
       border: 1px solid #e5e7eb;
     }
-    .swatch-fill { height: 30px; }
-    .swatch-info { padding: 4px 6px; }
-    .swatch-name { font-size: 8px; font-weight: 700; color: #000; }
-    .swatch-hex { font-size: 7.5px; color: #9CA3AF; font-family: 'SF Mono', monospace; }
+    .swatch-fill { height: 28px; }
+    .swatch-info { padding: 3px 5px; }
+    .swatch-name { font-size: 7.5px; font-weight: 700; color: #000; }
+    .swatch-hex { font-size: 7px; color: #9CA3AF; font-family: 'SF Mono', monospace; }
 
     /* ── Typography ── */
     .type-sample {
       border: 1px solid #e5e7eb; border-radius: 6px;
-      padding: 8px 10px; margin-bottom: 5px;
+      padding: 7px 10px; margin-bottom: 4px;
     }
-    .type-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 800; color: #000; margin-bottom: 2px; }
+    .type-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; color: #000; margin-bottom: 1px; }
     .type-body { font-size: 10px; color: #6B7280; }
-    .type-meta { font-size: 7.5px; color: #9CA3AF; margin-top: 3px; }
+    .type-meta { font-size: 7px; color: #9CA3AF; margin-top: 2px; }
 
     /* ── Logo usage ── */
     .logo-row { display: flex; gap: 8px; margin-bottom: 4px; }
     .logo-box {
-      flex: 1; border-radius: 6px; padding: 14px;
+      flex: 1; border-radius: 6px; padding: 12px;
       display: flex; align-items: center; justify-content: center;
       border: 1px solid #e5e7eb;
     }
-    .logo-box img { height: 36px; }
-    .logo-dark { background: #000; border-color: #333; }
-    .logo-labels { display: flex; gap: 8px; margin-bottom: 8px; }
+    .logo-box img { height: 34px; }
+    .logo-labels { display: flex; gap: 8px; margin-bottom: 6px; }
     .logo-labels div { flex: 1; text-align: center; font-size: 7px; color: #9CA3AF; }
 
     /* ── Do / Don't ── */
-    .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-    .rule-box { border-radius: 6px; padding: 7px 9px; font-size: 8.5px; line-height: 1.65; }
+    .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+    .rule-box { border-radius: 6px; padding: 6px 8px; font-size: 8px; line-height: 1.6; }
     .do-box { background: #f0fdf4; border: 1px solid #bbf7d0; }
     .dont-box { background: #fef2f2; border: 1px solid #fecaca; }
-    .rule-title { font-size: 8px; font-weight: 700; margin-bottom: 3px; }
+    .rule-title { font-size: 8px; font-weight: 700; margin-bottom: 2px; }
     .do-box .rule-title { color: #166534; }
     .dont-box .rule-title { color: #991b1b; }
     .rule-box ul { list-style: none; }
@@ -98,40 +97,68 @@
     .dont-box li::before { content: '✗ '; color: #dc2626; font-weight: 700; }
 
     /* ── Voice ── */
-    .voice-row { display: flex; gap: 7px; margin-top: 4px; }
+    .voice-row { display: flex; gap: 6px; margin-top: 3px; }
     .voice-pill {
-      flex: 1; text-align: center; padding: 6px 4px;
+      flex: 1; text-align: center; padding: 5px 4px;
       border-radius: 6px; border: 1px solid #e5e7eb;
     }
     .voice-word { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; font-weight: 800; color: #000; }
-    .voice-desc { font-size: 7.5px; color: #9CA3AF; margin-top: 1px; }
+    .voice-desc { font-size: 7px; color: #9CA3AF; margin-top: 1px; }
 
     /* ── Applications ── */
-    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
     .app-card {
       border: 1px solid #e5e7eb; border-radius: 6px;
-      padding: 7px 9px;
+      padding: 6px 8px;
     }
-    .app-title { font-size: 8px; font-weight: 700; color: #000; margin-bottom: 2px; }
-    .app-desc { font-size: 8px; color: #6B7280; line-height: 1.55; }
+    .app-title { font-size: 8px; font-weight: 700; color: #000; margin-bottom: 1px; }
+    .app-desc { font-size: 7.5px; color: #6B7280; line-height: 1.5; }
 
     /* ── Email sig ── */
     .sig-box {
       border: 1px solid #e5e7eb; border-radius: 6px;
-      padding: 8px 10px; margin-top: 6px;
+      padding: 7px 10px; margin-top: 5px;
       display: flex; align-items: center; gap: 10px;
     }
-    .sig-box img { height: 28px; }
+    .sig-box img { height: 26px; }
     .sig-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 9px; font-weight: 700; color: #000; }
     .sig-role { font-size: 7px; color: #6BBF2E; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-    .sig-details { font-size: 7.5px; color: #9CA3AF; line-height: 1.6; }
-    .sig-divider { width: 1px; height: 28px; background: #6BBF2E; flex-shrink: 0; }
+    .sig-details { font-size: 7px; color: #9CA3AF; line-height: 1.6; }
+    .sig-divider { width: 1px; height: 26px; background: #6BBF2E; flex-shrink: 0; }
+
+    /* ── Digital ── */
+    .digital-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 4px; }
+    .digital-card {
+      border: 1px solid #e5e7eb; border-radius: 6px;
+      padding: 6px 8px;
+    }
+    .digital-title { font-size: 8px; font-weight: 700; color: #000; margin-bottom: 2px; }
+    .digital-list { list-style: none; font-size: 7.5px; color: #6B7280; line-height: 1.6; }
+    .digital-list li::before { content: '→ '; color: #6BBF2E; font-weight: 600; }
+
+    /* ── Contact bar ── */
+    .contact-bar {
+      margin-top: 8px;
+      background: #000;
+      border-radius: 6px;
+      padding: 8px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .contact-bar-left {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9px; font-weight: 700; color: #6BBF2E;
+      letter-spacing: 0.04em;
+    }
+    .contact-bar-right { font-size: 8px; color: #ccc; }
+    .contact-bar-right span { color: #fff; font-weight: 600; }
 
     /* ── Footer ── */
     .footer {
-      position: absolute; bottom: 0.28in; left: 0.48in; right: 0.48in;
+      position: absolute; bottom: 0.25in; left: 0.45in; right: 0.45in;
       display: flex; justify-content: space-between; align-items: center;
-      padding-top: 8px; border-top: 1px solid #e5e7eb;
+      padding-top: 6px; border-top: 1px solid #e5e7eb;
       font-size: 7px; color: #9CA3AF;
     }
 
@@ -191,7 +218,7 @@
       </div>
 
       <!-- Typography -->
-      <div class="section-label" style="margin-top:12px;">Typography</div>
+      <div class="section-label" style="margin-top:10px;">Typography</div>
       <div class="type-sample">
         <div class="type-heading">Plus Jakarta Sans</div>
         <div class="type-meta">Headlines, titles, buttons — Weights: 600 / 700 / 800</div>
@@ -202,7 +229,7 @@
       </div>
 
       <!-- Voice -->
-      <div class="section-label" style="margin-top:12px;">Brand Voice</div>
+      <div class="section-label" style="margin-top:10px;">Brand Voice</div>
       <div class="voice-row">
         <div class="voice-pill"><div class="voice-word">Professional</div><div class="voice-desc">B2B partner, not a side gig</div></div>
         <div class="voice-pill"><div class="voice-word">Reliable</div><div class="voice-desc">We show up every night</div></div>
@@ -210,7 +237,7 @@
       </div>
 
       <!-- Email Signature -->
-      <div class="section-label" style="margin-top:12px;">Email Signature</div>
+      <div class="section-label" style="margin-top:10px;">Email Signature</div>
       <div class="sig-box">
         <img src="vps-logo.png" alt="VPS" />
         <div class="sig-divider"></div>
@@ -218,6 +245,27 @@
           <div class="sig-name">Shannon Honse</div>
           <div class="sig-role">Owner / Operator</div>
           <div class="sig-details">info@valetpropertysolutions.com · 316-573-1739<br/>valetpropertysolutions.com</div>
+        </div>
+      </div>
+
+      <!-- Digital -->
+      <div class="section-label" style="margin-top:10px;">Digital Standards</div>
+      <div class="digital-grid">
+        <div class="digital-card">
+          <div class="digital-title">Website</div>
+          <ul class="digital-list">
+            <li>Dark hero, white sections</li>
+            <li>Green CTAs + accents only</li>
+            <li>No stock photography</li>
+          </ul>
+        </div>
+        <div class="digital-card">
+          <div class="digital-title">Management App</div>
+          <ul class="digital-list">
+            <li>True black (#050505) BG</li>
+            <li>Neon green (#4ADE80) CTAs</li>
+            <li>Card borders, shimmer loads</li>
+          </ul>
         </div>
       </div>
 
@@ -264,10 +312,10 @@
       </div>
 
       <!-- Terminology -->
-      <div class="section-label" style="margin-top:10px;">Terminology</div>
-      <div style="font-size:8.5px;line-height:1.7;margin-bottom:8px;">
+      <div class="section-label" style="margin-top:8px;">Terminology</div>
+      <div style="font-size:8px;line-height:1.65;margin-bottom:6px;">
         <div><strong style="color:#000;">Say:</strong> Valet trash service · Property partners · Valets · Doorstep pickup · Partnership agreement · Nightly reports</div>
-        <div style="margin-top:3px;"><strong style="color:#991b1b;">Avoid:</strong> Waste management solution · Trash guys · Clients · Contract · Analytics · Dashboard</div>
+        <div style="margin-top:2px;"><strong style="color:#991b1b;">Avoid:</strong> Waste management solution · Trash guys · Clients · Contract · Analytics · Dashboard</div>
       </div>
 
       <!-- Applications -->
@@ -279,25 +327,44 @@
         </div>
         <div class="app-card">
           <div class="app-title">Vehicle Magnets</div>
-          <div class="app-desc">Black background, white logo + company name, green accent line, phone + URL.</div>
+          <div class="app-desc">Black background, white logo, green accent, phone + URL.</div>
         </div>
         <div class="app-card">
           <div class="app-title">Uniforms</div>
-          <div class="app-desc">Black polo, logo left chest embroidered. Black lanyard with photo ID badge.</div>
+          <div class="app-desc">Black polo, logo left chest. Black lanyard + photo ID badge.</div>
         </div>
         <div class="app-card">
           <div class="app-title">Collection Bins</div>
-          <div class="app-desc">Black bin, weatherproof vinyl sticker with logo + "Place trash by 9 PM."</div>
+          <div class="app-desc">Black bin, vinyl sticker: logo + "Place trash by 9 PM."</div>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="section-label" style="margin-top:8px;">Social Media</div>
+      <div class="app-grid">
+        <div class="app-card">
+          <div class="app-title">Profile Photo</div>
+          <div class="app-desc">VP monogram on white or black background. Square crop.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-title">Cover / Banner</div>
+          <div class="app-desc">Black background, full logo centered, green accent strip bottom.</div>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- Contact bar -->
+  <div class="contact-bar">
+    <div class="contact-bar-left">VALET PROPERTY SOLUTIONS</div>
+    <div class="contact-bar-right"><span>info@valetpropertysolutions.com</span> · <span>316-573-1739</span> · <span>valetpropertysolutions.com</span></div>
+  </div>
+
   <!-- Footer -->
   <div class="footer">
-    <span>Valet Property Solutions · All in 1 Realty LLC · Confidential</span>
-    <span>info@valetpropertysolutions.com · valetpropertysolutions.com</span>
+    <span>All in 1 Realty LLC · Confidential</span>
+    <span>v1.0 · March 2026</span>
   </div>
 
 </div>

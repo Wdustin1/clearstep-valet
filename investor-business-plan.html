@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Valet Property Solutions — Business Plan</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -24,569 +23,231 @@
       --font-body: 'Inter', system-ui, sans-serif;
     }
 
-    @page {
-      size: letter;
-      margin: 0.6in 0.7in;
-    }
+    @page { size: letter; margin: 0.45in 0.55in; }
 
     html, body {
       font-family: var(--font-body);
-      font-size: 10.5px;
-      line-height: 1.6;
+      font-size: 9.5px;
+      line-height: 1.5;
       color: var(--mid);
       background: #f1f5f9;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    .doc {
-      max-width: 8.5in;
-      margin: 0 auto;
-      background: var(--bg);
-    }
+    .doc { max-width: 8.5in; margin: 0 auto; background: var(--bg); }
 
-    /* ── Cover Page ── */
+    /* ── Cover ── */
     .cover {
-      min-height: 11in;
+      height: 11in;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2in 1.2in;
+      padding: 1.5in 1in;
       page-break-after: always;
       position: relative;
-      overflow: hidden;
     }
-
     .cover::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 6px;
+      height: 5px;
       background: linear-gradient(90deg, var(--green), var(--green-light), var(--green));
     }
-
-    .cover-logo {
-      margin-bottom: 40px;
-    }
-
-    .cover-logo svg {
-      width: 72px;
-      height: 72px;
-    }
-
+    .cover-logo { margin-bottom: 32px; }
+    .cover-logo svg { width: 64px; height: 64px; }
     .cover h1 {
       font-family: var(--font-heading);
-      font-size: 36px;
+      font-size: 34px;
       font-weight: 800;
       color: var(--dark);
       letter-spacing: -0.03em;
       line-height: 1.1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
+    .cover-subtitle { font-size: 14px; color: var(--muted); font-weight: 500; margin-bottom: 40px; }
+    .cover-divider { width: 50px; height: 3px; background: var(--green); border-radius: 2px; margin-bottom: 40px; }
+    .cover-meta { font-size: 11px; color: var(--muted); line-height: 2; }
+    .cover-meta strong { color: var(--dark); font-weight: 700; }
+    .cover-footer { position: absolute; bottom: 32px; font-size: 9px; color: var(--light-muted); }
 
-    .cover-subtitle {
-      font-size: 15px;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 48px;
-    }
+    /* ── Content ── */
+    .content { padding: 0 44px; }
 
-    .cover-divider {
-      width: 60px;
-      height: 3px;
-      background: var(--green);
-      border-radius: 2px;
-      margin-bottom: 48px;
-    }
-
-    .cover-meta {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 2;
-    }
-
-    .cover-meta strong {
-      color: var(--dark);
-      font-weight: 700;
-    }
-
-    .cover-footer {
-      position: absolute;
-      bottom: 40px;
-      font-size: 10px;
-      color: var(--light-muted);
-    }
-
-    /* ── Content Pages ── */
-    .page {
-      padding: 48px 56px;
-      page-break-after: always;
-    }
-
-    .page:last-child {
-      page-break-after: auto;
-    }
-
-    /* ── Headings ── */
     h2 {
       font-family: var(--font-heading);
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 800;
       color: var(--dark);
       letter-spacing: -0.02em;
-      margin-bottom: 6px;
-      padding-bottom: 10px;
+      margin-top: 18px;
+      margin-bottom: 5px;
+      padding-bottom: 4px;
       border-bottom: 2px solid var(--green);
       display: inline-block;
     }
-
-    h2 + p, h2 + .intro {
-      margin-top: 14px;
-    }
+    h2:first-child { margin-top: 0; }
 
     h3 {
       font-family: var(--font-heading);
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--dark);
-      letter-spacing: -0.01em;
-      margin-top: 22px;
-      margin-bottom: 8px;
+      margin-top: 12px;
+      margin-bottom: 4px;
     }
 
-    h3:first-child {
-      margin-top: 0;
-    }
+    p { margin-bottom: 6px; }
+    strong { color: var(--dark); font-weight: 700; }
 
-    /* ── Text ── */
-    p {
-      margin-bottom: 10px;
-    }
-
-    .intro {
-      font-size: 12px;
-      color: var(--mid);
-      line-height: 1.7;
-    }
-
-    .highlight-text {
-      color: var(--dark);
-      font-weight: 600;
-    }
-
-    .green-text {
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    strong {
-      color: var(--dark);
-      font-weight: 700;
-    }
-
-    /* ── Callout Box ── */
+    /* ── Callout ── */
     .callout {
       background: var(--green-pale);
-      border-left: 4px solid var(--green);
-      border-radius: 0 8px 8px 0;
-      padding: 16px 20px;
-      margin: 16px 0;
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      margin: 10px 0;
     }
-
-    .callout p {
-      margin: 0;
-      font-size: 11.5px;
-      color: var(--mid);
-    }
-
-    .callout strong {
-      color: var(--dark);
-    }
+    .callout p { margin: 0; font-size: 10px; }
 
     .callout-dark {
       background: var(--dark);
       border-left-color: var(--green-light);
-      border-radius: 8px;
-      padding: 20px 24px;
+      border-radius: 6px;
+      padding: 14px 18px;
     }
-
-    .callout-dark p {
-      color: #cbd5e1;
-    }
-
-    .callout-dark strong {
-      color: #fff;
-    }
-
+    .callout-dark p { color: #cbd5e1; }
+    .callout-dark strong { color: #fff; }
     .callout-dark .big-num {
       font-family: var(--font-heading);
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 800;
       color: var(--green-light);
-      letter-spacing: -0.03em;
-    }
-
-    /* ── Tables ── */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0;
-      font-size: 10.5px;
-    }
-
-    th {
-      text-align: left;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 8px 12px;
-      border-bottom: 2px solid var(--border);
-      background: var(--bg-alt);
-    }
-
-    td {
-      padding: 8px 12px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .table-wrap {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 12px 0;
-    }
-
-    .table-wrap table {
-      margin: 0;
-    }
-
-    .totals-row td {
-      font-weight: 700;
-      color: var(--dark);
-      border-top: 2px solid var(--border);
-      background: var(--green-pale);
-    }
-
-    .highlight-row td {
-      background: var(--green-pale);
-      font-weight: 600;
-      color: var(--green);
-    }
-
-    td.right, th.right {
-      text-align: right;
     }
 
     /* ── Pricing strip ── */
     .pricing-strip {
       display: flex;
-      gap: 0;
-      border-radius: 10px;
+      border-radius: 8px;
       overflow: hidden;
-      margin: 16px 0;
+      margin: 10px 0;
       border: 1px solid var(--border);
     }
-
     .pricing-item {
       flex: 1;
       text-align: center;
-      padding: 18px 12px;
+      padding: 12px 8px;
       border-right: 1px solid var(--border);
     }
+    .pricing-item:last-child { border-right: none; background: var(--green-pale); }
+    .pricing-label { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+    .pricing-num { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: var(--dark); }
+    .pricing-item:last-child .pricing-num { color: var(--green); }
+    .pricing-sub { font-size: 8px; color: var(--muted); }
 
-    .pricing-item:last-child {
-      border-right: none;
-      background: var(--green-pale);
+    /* ── Tables ── */
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9.5px; }
+    th {
+      text-align: left; font-size: 8px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); padding: 5px 10px;
+      border-bottom: 2px solid var(--border); background: var(--bg-alt);
     }
+    td { padding: 5px 10px; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    .table-wrap { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 8px 0; }
+    .table-wrap table { margin: 0; }
+    .totals-row td { font-weight: 700; color: var(--dark); border-top: 2px solid var(--border); background: var(--green-pale); }
+    .highlight-row td { background: var(--green-pale); font-weight: 600; color: var(--green); }
+    td.right, th.right { text-align: right; }
 
-    .pricing-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .pricing-num {
-      font-family: var(--font-heading);
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.03em;
-    }
-
-    .pricing-item:last-child .pricing-num {
-      color: var(--green);
-    }
-
-    .pricing-sub {
-      font-size: 9px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* ── NOI Box ── */
+    /* ── NOI box ── */
     .noi-box {
       background: var(--dark);
-      border-radius: 10px;
-      padding: 24px 28px;
-      margin: 16px 0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 10px 0;
       color: #fff;
     }
-
     .noi-box h4 {
-      font-family: var(--font-heading);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 14px;
+      font-family: var(--font-heading); font-size: 9px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green-light); margin-bottom: 8px;
     }
+    .noi-box table { color: #fff; margin: 0; }
+    .noi-box th { color: var(--light-muted); background: transparent; border-bottom-color: rgba(255,255,255,0.1); }
+    .noi-box td { border-bottom-color: rgba(255,255,255,0.07); color: #cbd5e1; }
+    .noi-box td.right { color: #fff; font-weight: 600; }
+    .noi-box .highlight-row td { background: rgba(74,222,128,0.1); color: var(--green-light); font-weight: 700; }
+    .noi-box .highlight-row td.right { color: var(--green-light); font-size: 12px; font-weight: 800; }
 
-    .noi-box table {
-      color: #fff;
-    }
-
-    .noi-box th {
-      color: var(--light-muted);
-      background: transparent;
-      border-bottom-color: rgba(255,255,255,0.1);
-    }
-
-    .noi-box td {
-      border-bottom-color: rgba(255,255,255,0.07);
-      color: #cbd5e1;
-    }
-
-    .noi-box td.right {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .noi-box .highlight-row td {
-      background: rgba(74, 222, 128, 0.1);
-      color: var(--green-light);
-      font-weight: 700;
-    }
-
-    .noi-box .highlight-row td.right {
-      color: var(--green-light);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    /* ── Budget Grid ── */
-    .budget-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-      margin: 16px 0;
-    }
-
-    .budget-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
+    /* ── Budget grid ── */
+    .budget-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 10px 0; }
+    .budget-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
     .budget-card-header {
-      background: var(--bg-alt);
-      padding: 10px 14px;
+      background: var(--bg-alt); padding: 6px 10px;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
-    .budget-card-title {
-      font-family: var(--font-heading);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    .budget-card-total {
-      font-family: var(--font-heading);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--green);
-    }
-
-    .budget-card table {
-      margin: 0;
-    }
-
-    .budget-card td {
-      padding: 6px 14px;
-      font-size: 10px;
-    }
-
-    .budget-card td:last-child {
-      text-align: right;
-      font-weight: 600;
-      color: var(--dark);
-      white-space: nowrap;
-    }
-
-    /* ── Revenue Timeline ── */
-    .revenue-timeline {
-      position: relative;
-      margin: 16px 0;
-    }
+    .budget-card-title { font-family: var(--font-heading); font-size: 10px; font-weight: 700; color: var(--dark); }
+    .budget-card-total { font-family: var(--font-heading); font-size: 12px; font-weight: 800; color: var(--green); }
+    .budget-card table { margin: 0; }
+    .budget-card td { padding: 3px 10px; font-size: 9px; }
+    .budget-card td:last-child { text-align: right; font-weight: 600; color: var(--dark); white-space: nowrap; }
 
     /* ── Checklist ── */
-    .built-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin: 12px 0;
+    .built-list { list-style: none; display: flex; flex-direction: column; gap: 4px; margin: 6px 0; }
+    .built-list li { display: flex; align-items: flex-start; gap: 7px; font-size: 9.5px; line-height: 1.45; }
+    .ck {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--green-mid); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; margin-top: 1px;
     }
+    .ck svg { width: 8px; height: 8px; }
 
-    .built-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    .check-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--green-mid);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 1px;
-    }
-
-    /* ── Risk table ── */
-    .risk-table td:first-child {
-      font-weight: 600;
-      color: var(--dark);
-      width: 30%;
-    }
+    /* ── Two col ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 4px 0; }
 
     /* ── Team ── */
-    .team-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 14px 0;
-    }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+    .team-card { padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-alt); }
+    .team-name { font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 1px; }
+    .team-role { font-size: 9px; font-weight: 600; color: var(--green); margin-bottom: 4px; }
+    .team-desc { font-size: 9.5px; color: var(--muted); line-height: 1.5; }
 
-    .team-card {
-      padding: 18px 20px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--bg-alt);
-    }
-
-    .team-name {
-      font-family: var(--font-heading);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 2px;
-    }
-
-    .team-role {
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--green);
-      letter-spacing: 0.03em;
-      margin-bottom: 8px;
-    }
-
-    .team-desc {
-      font-size: 10.5px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── Summary footer ── */
+    /* ── Summary ── */
     .summary-box {
       background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-top: 20px;
-      color: #fff;
+      border-radius: 8px; padding: 18px 22px; margin-top: 14px; color: #fff;
     }
+    .summary-box h3 { font-family: var(--font-heading); font-size: 14px; font-weight: 800; color: #fff; margin: 0 0 8px 0; }
+    .summary-box p { color: #cbd5e1; font-size: 10px; line-height: 1.6; margin-bottom: 6px; }
+    .summary-box p:last-child { margin-bottom: 0; }
+    .green-text { color: var(--green-light); font-weight: 700; }
 
-    .summary-box h3 {
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 800;
-      color: #fff;
-      margin-top: 0;
-      margin-bottom: 12px;
-    }
+    /* ── Risk ── */
+    .risk-table td:first-child { font-weight: 600; color: var(--dark); width: 28%; }
 
-    .summary-box p {
-      color: #cbd5e1;
-      font-size: 11.5px;
-      line-height: 1.7;
-    }
-
-    .summary-box .green-text {
-      color: var(--green-light);
-    }
-
-    /* ── Two column layout ── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin: 8px 0;
-    }
-
-    /* ── Section spacer ── */
-    .section-gap {
-      height: 8px;
-    }
+    /* ── Provides grid ── */
+    .provides-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 16px; margin: 6px 0; }
+    .provides-grid li { font-size: 9px; }
 
     /* ── Print ── */
-    @media print {
-      html, body { background: #fff; }
-      .doc { box-shadow: none; }
-    }
-
-    @media screen {
-      body { padding: 20px; }
-      .doc {
-        box-shadow: 0 4px 40px rgba(0,0,0,0.12);
-      }
-    }
+    @media print { html, body { background: #fff; } .doc { box-shadow: none; } }
+    @media screen { body { padding: 20px; } .doc { box-shadow: 0 4px 40px rgba(0,0,0,0.12); } }
   </style>
 </head>
 <body>
 <div class="doc">
 
-  <!-- ════════════════ COVER PAGE ════════════════ -->
+  <!-- ═══ COVER ═══ -->
   <div class="cover">
     <div class="cover-logo">
       <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="72" height="72" rx="14" fill="#0d2b17"/>
-        <defs>
-          <linearGradient id="clg" x1="14" y1="56" x2="54" y2="24" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#16a34a"/>
-            <stop offset="100%" stop-color="#4ade80"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="clg" x1="14" y1="56" x2="54" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#16a34a"/><stop offset="100%" stop-color="#4ade80"/></linearGradient></defs>
         <path d="M14 56 L14 45 L27 45 L27 34 L40 34 L40 24 L54 24" stroke="url(#clg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         <circle cx="54" cy="24" r="6" fill="#4ade80"/>
       </svg>
@@ -603,20 +264,18 @@
     <div class="cover-footer">Confidential — Prepared for Investor Review</div>
   </div>
 
-  <!-- ════════════════ PAGE 1: EXECUTIVE SUMMARY + MODEL ════════════════ -->
-  <div class="page">
+  <!-- ═══ CONTENT — flows naturally, no forced page breaks ═══ -->
+  <div class="content">
+
     <h2>Executive Summary</h2>
-    <div class="intro">
-      <p>Valet Property Solutions (VPS) provides doorstep valet trash pickup for apartment communities. Our valets collect trash from outside each resident's door 5–7 nights per week and haul it to the on-site dumpster — a hands-off, premium amenity that residents love and property managers profit from.</p>
-      <p>Valet trash is the <strong>#1 rated resident amenity</strong> in multifamily housing nationally, yet no established local provider currently serves the Wichita market. National companies focus on larger metros and charge higher rates. VPS fills that gap as a locally owned, competitively priced alternative with the technology, branding, and operational plan ready to launch.</p>
-    </div>
+    <p>Valet Property Solutions (VPS) provides doorstep valet trash pickup for apartment communities. Our valets collect trash from outside each resident's door 5–7 nights per week and haul it to the on-site dumpster — a hands-off, premium amenity that residents love and property managers profit from.</p>
+    <p>Valet trash is the <strong>#1 rated resident amenity</strong> in multifamily housing nationally, yet no established local provider currently serves the Wichita market. National companies focus on larger metros and charge higher rates. VPS fills that gap as a locally owned, competitively priced alternative ready to launch.</p>
 
     <div class="callout-dark callout">
-      <p><strong>We are seeking <span class="big-num">$5,000</span> in startup funding</strong> to purchase equipment and launch marketing. The business generates revenue from Month 1 of service, and we project <strong>full repayment within 90–120 days</strong> of landing our first property contract.</p>
+      <p><strong>We are seeking <span class="big-num">$5,000</span> in startup funding</strong> to purchase equipment and launch marketing. Revenue begins Month 1 of service, with <strong>full repayment projected within 90–120 days</strong> of our first contract.</p>
     </div>
 
     <h2>How the Business Works</h2>
-    <p>The model is simple and the math is straightforward.</p>
 
     <div class="pricing-strip">
       <div class="pricing-item">
@@ -636,149 +295,60 @@
       </div>
     </div>
 
-    <p><strong>This is why properties say yes:</strong> we hand them a new revenue stream they didn't have before. No out-of-pocket cost to the property manager — the resident fee covers VPS's charge and generates net profit from day one.</p>
+    <p><strong>This is why properties say yes:</strong> we hand them a new revenue stream they didn't have before. Zero out-of-pocket cost — the resident fee covers our charge and generates net profit from day one.</p>
 
     <h3>What VPS Provides</h3>
-    <ul class="built-list">
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Doorstep trash pickup</strong> 5–7 nights/week on a set schedule</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Collection bin</strong> placed outside each unit door (included in service)</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Background-checked, uniformed valets</strong> — residents know who's in their hallway</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Nightly route completion reports</strong> via our custom management app</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>General liability insurance</strong> with COI naming property as additional insured</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>One local point of contact</strong> — not a national call center</span>
-      </li>
+    <ul class="built-list provides-grid">
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Doorstep trash pickup 5–7 nights/week</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Collection bin for each unit (included)</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Background-checked, uniformed valets</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Nightly digital route completion reports</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>GL insurance with COI for each property</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>One local point of contact</span></li>
     </ul>
-  </div>
 
-  <!-- ════════════════ PAGE 2: MARKET + NOI ════════════════ -->
-  <div class="page">
+    <!-- ── MARKET ── -->
     <h2>The Market</h2>
-
     <div class="two-col">
       <div>
         <h3>Wichita Multifamily Market</h3>
-        <ul class="built-list">
-          <li>
-            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            <span><strong>Metro population:</strong> ~650,000</span>
-          </li>
-          <li>
-            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            <span><strong>Apartment units:</strong> 30,000–40,000+</span>
-          </li>
-          <li>
-            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            <span><strong>New construction:</strong> ~800 units added in 2024</span>
-          </li>
-          <li>
-            <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            <span><strong>Average occupancy:</strong> 92%+</span>
-          </li>
-        </ul>
-
-        <h3>Why Now</h3>
-        <p>No established local valet trash provider serves Wichita. National players (Valet Living, Trash Butler) focus on major metros and charge premium rates. The 75–300 unit mid-market properties that make up most of Wichita's inventory are underserved and ready for a local alternative.</p>
+        <p><strong>~650,000</strong> metro population · <strong>30,000–40,000+</strong> apartment units · <strong>~800</strong> new units added in 2024 · <strong>92%+</strong> average occupancy</p>
+        <p>No established local valet trash provider serves this market. National players (Valet Living, Trash Butler) focus on major metros and charge premium rates. The 75–300 unit mid-market properties that make up most of Wichita's inventory are underserved.</p>
       </div>
-
       <div>
         <h3>Target Properties</h3>
-        <p>Apartment communities with 75–300+ units in the Wichita metro area — Wichita, Derby, Andover, Maize, and Haysville.</p>
-        <p><strong>Class B and C properties</strong> are our sweet spot. These managers feel the most pressure to add revenue without raising base rent. The NOI pitch lands hardest here.</p>
-
+        <p>Apartment communities with 75–300+ units in Wichita, Derby, Andover, Maize, and Haysville. <strong>Class B and C properties</strong> are our sweet spot — these managers feel the most pressure to add revenue without raising base rent.</p>
         <h3>Competitive Advantage</h3>
-        <p>Property managers currently have two options: let residents self-manage trash (leading to overflows and complaints), or pay a national provider who doesn't prioritize their market.</p>
-        <p>VPS is the <strong>local alternative</strong> — owner-operated, competitively priced, accountable, and backed by purpose-built technology.</p>
+        <p>Local, owner-operated, competitively priced, accountable, and backed by purpose-built technology. Not a national call center.</p>
       </div>
     </div>
 
-    <h3>The NOI Case — Why Property Managers Sign Up</h3>
-
     <div class="noi-box">
-      <h4>200-Unit Property Example</h4>
+      <h4>Why Property Managers Sign Up — 200-Unit Example</h4>
       <table>
-        <tr>
-          <td>Resident fee collected ($50 × 200 units)</td>
-          <td class="right">$10,000 /mo</td>
-        </tr>
-        <tr>
-          <td>VPS service cost ($35 × 200 units)</td>
-          <td class="right">−$7,000 /mo</td>
-        </tr>
-        <tr class="highlight-row">
-          <td>Property manager net gain</td>
-          <td class="right">+$3,000 /mo</td>
-        </tr>
-        <tr>
-          <td>Annual NOI increase</td>
-          <td class="right">$36,000</td>
-        </tr>
-        <tr class="highlight-row">
-          <td>Estimated property value increase (6% cap rate)</td>
-          <td class="right">+$600,000</td>
-        </tr>
+        <tr><td>Resident fee collected ($50 × 200 units)</td><td class="right">$10,000 /mo</td></tr>
+        <tr><td>VPS service cost ($35 × 200 units)</td><td class="right">−$7,000 /mo</td></tr>
+        <tr class="highlight-row"><td>Property manager net gain</td><td class="right">+$3,000 /mo</td></tr>
+        <tr><td>Annual NOI increase</td><td class="right">$36,000</td></tr>
+        <tr class="highlight-row"><td>Estimated property value increase (6% cap rate)</td><td class="right">+$600,000</td></tr>
       </table>
     </div>
 
-    <p>We are handing property managers <strong>$36,000/year in new NOI</strong> and a <strong>$600,000 bump in asset value</strong> — and it costs them nothing out of pocket. This is the pitch that gets contracts signed.</p>
-  </div>
-
-  <!-- ════════════════ PAGE 3: ALREADY BUILT + THE ASK ════════════════ -->
-  <div class="page">
+    <!-- ── ALREADY BUILT ── -->
     <h2>What We've Already Built</h2>
-    <p>We aren't starting from zero. Before seeking any funding, we've invested significant time building the operational foundation:</p>
-
+    <p>Before seeking any funding, we've invested significant time building the operational foundation:</p>
     <ul class="built-list">
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Legal entity established</strong> — All in 1 Realty LLC is active and registered</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Professional website live</strong> — Full-featured site with contact form, interactive NOI calculator, service details, and complete branding</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Custom management app built and tested</strong> — Android app for route management, employee tracking, nightly PDF reports (auto-generated), admin-to-valet messaging, unit-level issue logging with photo documentation</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Brand identity complete</strong> — Logo, color system, pitch materials designed and print-ready</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Market research complete</strong> — Pricing validated against national competitors, target properties identified</span>
-      </li>
-      <li>
-        <div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <span><strong>Service agreement template ready</strong> — Contract template prepared for property manager review</span>
-      </li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Legal entity established</strong> — All in 1 Realty LLC is active and registered</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Professional website live</strong> — Contact form, interactive NOI calculator, service details, full branding</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Custom management app built & tested</strong> — Route management, employee tracking, auto-generated PDF reports, admin-to-valet messaging, unit-level issue logging with photos</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Brand identity & pitch materials</strong> complete and print-ready</span></li>
+      <li><div class="ck"><svg viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Market research & service agreement template</strong> — Pricing validated, contracts ready</span></li>
     </ul>
+    <div class="callout"><p><strong>This isn't an idea on a napkin.</strong> The infrastructure is built. We need equipment to start serving properties.</p></div>
 
-    <div class="callout">
-      <p><strong>This isn't an idea on a napkin.</strong> The operational infrastructure is built and ready to deploy. We need equipment to start serving properties.</p>
-    </div>
-
-    <div class="section-gap"></div>
-
+    <!-- ── THE ASK ── -->
     <h2>The Ask: $5,000</h2>
-    <p>We need $5,000 to purchase equipment and launch marketing. Here's exactly where every dollar goes:</p>
+    <p>Here's exactly where every dollar goes:</p>
 
     <div class="budget-grid">
       <div class="budget-card">
@@ -825,139 +395,93 @@
     </div>
 
     <div class="callout-dark callout">
-      <p style="text-align:center; margin-bottom: 4px;"><strong>Total: $4,800</strong> &nbsp;(~$200 contingency buffer)</p>
-      <p style="text-align:center; font-size: 12px;"><strong>Repayment: $5,000 in full</strong> — no equity, no interest. Projected payback: <span style="color:#4ade80; font-weight:800;">90–120 days</span> from first contract.</p>
+      <p style="text-align:center;margin-bottom:2px;"><strong>Total: $4,800</strong> &nbsp;(~$200 buffer) &nbsp;→&nbsp; <strong>Repayment: $5,000 in full</strong> — no equity, no interest</p>
+      <p style="text-align:center;font-size:11px;">Projected payback: <span style="color:#4ade80;font-weight:800;">90–120 days</span> from first contract</p>
     </div>
 
-    <p>One 150-unit property at $35/unit generates <strong>$5,250/month</strong> in gross revenue. After labor and operating costs (~50%), net cash flow is ~$2,600/month. The loan is repaid within 2 months of steady service. Even conservatively — a smaller 100-unit first contract ($3,500/month gross) — repayment happens within 3 months.</p>
-  </div>
+    <p>One 150-unit property at $35/unit = <strong>$5,250/month gross</strong>. After labor & ops (~50%), that's ~$2,600/month net. Loan repaid in 2 months. Even a smaller 100-unit first contract ($3,500/month gross) → repayment in 3 months.</p>
 
-  <!-- ════════════════ PAGE 4: REVENUE + OPS + TEAM ════════════════ -->
-  <div class="page">
+    <!-- ── REVENUE ── -->
     <h2>Revenue Projections</h2>
 
-    <h3>Year 1 — Conservative Ramp</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Timeline</th>
-            <th>Properties</th>
-            <th>Units</th>
-            <th class="right">Monthly Gross Revenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Months 1–2</td>
-            <td>0</td>
-            <td>0</td>
-            <td class="right">$0 (sales/onboarding)</td>
-          </tr>
-          <tr>
-            <td>Month 3</td>
-            <td>1</td>
-            <td>100</td>
-            <td class="right">$3,500</td>
-          </tr>
-          <tr>
-            <td>Months 4–5</td>
-            <td>2</td>
-            <td>250</td>
-            <td class="right">$8,750</td>
-          </tr>
-          <tr>
-            <td>Months 6–8</td>
-            <td>3</td>
-            <td>400</td>
-            <td class="right">$14,000</td>
-          </tr>
-          <tr>
-            <td>Months 9–12</td>
-            <td>4–5</td>
-            <td>600</td>
-            <td class="right">$21,000</td>
-          </tr>
-          <tr class="totals-row">
-            <td colspan="3"><strong>Year 1 Estimated Gross Revenue</strong></td>
-            <td class="right"><strong>$100,000 – $140,000</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p><strong>Year 1 estimated net income (after labor, supplies, insurance): $40,000 – $60,000</strong></p>
-
-    <div class="two-col">
+    <div class="two-col" style="align-items:start;">
       <div>
-        <h3>Year 2 — Growth Phase</h3>
-        <ul class="built-list">
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>8–12 properties, 1,200–1,800 units</span></li>
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>$42K–$63K/month gross revenue</span></li>
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Hired route employees (labor ~50%)</span></li>
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Projected net: $150K–$250K annually</strong></span></li>
-        </ul>
+        <h3>Year 1 — Conservative Ramp</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Timeline</th><th>Properties</th><th>Units</th><th class="right">Monthly Gross</th></tr></thead>
+            <tbody>
+              <tr><td>Months 1–2</td><td>0</td><td>0</td><td class="right">$0 (sales)</td></tr>
+              <tr><td>Month 3</td><td>1</td><td>100</td><td class="right">$3,500</td></tr>
+              <tr><td>Months 4–5</td><td>2</td><td>250</td><td class="right">$8,750</td></tr>
+              <tr><td>Months 6–8</td><td>3</td><td>400</td><td class="right">$14,000</td></tr>
+              <tr><td>Months 9–12</td><td>4–5</td><td>600</td><td class="right">$21,000</td></tr>
+              <tr class="totals-row"><td colspan="3"><strong>Year 1 Gross</strong></td><td class="right"><strong>$100K–$140K</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Year 1 net (after labor, supplies, insurance): $40K–$60K</strong></p>
       </div>
       <div>
-        <h3>Year 3 — Established Operation</h3>
-        <ul class="built-list">
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>15–25 properties, 2,500–4,000 units</span></li>
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Multiple route teams with ops manager</span></li>
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span><strong>Projected annual gross: $1M–$1.7M</strong></span></li>
-          <li><div class="check-icon"><svg width="10" height="10" viewBox="0 0 12 12"><polyline points="2 6.5 5 9.5 10 3.5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span>Expansion to surrounding Kansas markets</span></li>
-        </ul>
+        <h3>Year 2 — Growth</h3>
+        <p>8–12 properties · 1,200–1,800 units · $42K–$63K/month gross · Hired route employees (labor ~50%)</p>
+        <p><strong>Projected net: $150K–$250K annually</strong></p>
+        <h3>Year 3 — Established</h3>
+        <p>15–25 properties · 2,500–4,000 units · Multiple route teams with ops manager</p>
+        <p><strong>Projected annual gross: $1M–$1.7M</strong> · Expansion to surrounding Kansas markets</p>
       </div>
     </div>
 
-    <div class="section-gap"></div>
-
+    <!-- ── OPERATIONS ── -->
     <h2>Operations</h2>
     <div class="two-col">
       <div>
         <h3>Nightly Routes</h3>
-        <p>Residents place trash in bins outside their doors by 9 PM. Valets walk every hallway between 8 PM–midnight, collecting and hauling to the community dumpster. Each valet handles 100–150 units per shift (~2 hours). Route completion is logged in the VPS app with unit-level tracking.</p>
+        <p>Residents place trash in bins by 9 PM. Valets walk every hallway 8 PM–midnight, collecting and hauling to dumpster. Each valet handles 100–150 units (~2 hours). Route completion logged in app with unit-level tracking.</p>
         <h3>Scaling</h3>
-        <p>Owner-operated through 200–300 units (1–2 properties). First hire at 300+ units — part-time evening positions, $13–16/hour. Each additional employee adds ~150 units of capacity.</p>
+        <p>Owner-operated through 200–300 units. First hire at 300+ — part-time evenings, $13–16/hr. Each employee adds ~150 units of capacity.</p>
       </div>
       <div>
         <h3>Quality Control</h3>
-        <p>Nightly digital route reports auto-generated and shareable with property managers. Unit-level issue logging with photo documentation. Direct messaging between admin and valets through the app. Same-day response on property manager concerns.</p>
+        <p>Auto-generated nightly reports shareable with PMs. Unit-level issue logging with photos. Direct admin↔valet messaging. Same-day response SLA.</p>
         <h3>Risk Mitigation</h3>
         <div class="table-wrap">
-          <table class="risk-table" style="font-size:9.5px;">
+          <table class="risk-table" style="font-size:9px;">
             <tr><td>Slow acquisition</td><td>Direct outreach + real estate network</td></tr>
             <tr><td>Valet no-show</td><td>Owner as backup; proactive PM comms</td></tr>
             <tr><td>Contract cancellation</td><td>30-day clause; diversify quickly</td></tr>
-            <tr><td>National competitor</td><td>Local relationship + lower overhead</td></tr>
+            <tr><td>National competitor</td><td>Local relationships + lower overhead</td></tr>
             <tr><td>Bin damage/theft</td><td>$1.50/bin — 10% annual replacement</td></tr>
           </table>
         </div>
       </div>
     </div>
 
-    <div class="section-gap"></div>
-
+    <!-- ── TEAM ── -->
     <h2>Team</h2>
     <div class="team-grid">
       <div class="team-card">
         <div class="team-name">Shannon Honse</div>
         <div class="team-role">Owner / Operator</div>
-        <div class="team-desc">All in 1 Realty LLC. Real estate background with local property management relationships. Hands-on operator who will run initial routes personally before hiring.</div>
+        <div class="team-desc">All in 1 Realty LLC. Real estate background with local property management relationships. Hands-on operator running initial routes personally.</div>
       </div>
       <div class="team-card">
         <div class="team-name">Dustin Wohlgemuth</div>
         <div class="team-role">Operations & Technology</div>
-        <div class="team-desc">Built the VPS management app and website. Handles route overflow, technology infrastructure, and operational scaling support.</div>
+        <div class="team-desc">Built the VPS management app and website. Handles route overflow, tech infrastructure, and operational scaling.</div>
       </div>
     </div>
 
+    <!-- ── BOTTOM LINE ── -->
     <div class="summary-box">
       <h3>Bottom Line</h3>
-      <p>Valet Property Solutions is a simple, proven business model entering an underserved local market with a complete operational foundation already built. We're not asking for money to figure out if this works — valet trash is a <strong class="green-text">$2B+ national industry</strong>. We're asking for $5,000 to buy equipment and start serving properties.</p>
-      <p style="margin-top:10px;">The money buys bins, branding, and insurance. Revenue starts with the first contract. <strong class="green-text">Payback happens within 90–120 days.</strong></p>
-      <p style="margin-top:10px; margin-bottom:0;">The infrastructure is built. The market is open. We just need to stock the truck and start knocking on doors.</p>
+      <p>Valet Property Solutions is a simple, proven business model entering an underserved local market with a complete operational foundation already built. Valet trash is a <strong class="green-text">$2B+ national industry</strong>. We're asking for $5,000 to buy equipment and start serving properties.</p>
+      <p>The money buys bins, branding, and insurance. Revenue starts with the first contract. <strong class="green-text">Payback happens within 90–120 days.</strong> The infrastructure is built. The market is open. We just need to stock the truck and start knocking on doors.</p>
     </div>
-  </div>
 
+    <p style="margin-top:14px;font-size:8px;color:var(--light-muted);text-align:center;"><em>Prepared March 2026. Revenue projections are estimates based on industry benchmarks and local market analysis. Contact: info@valetpropertysolutions.com</em></p>
+
+  </div>
 </div>
 </body>
 </html>

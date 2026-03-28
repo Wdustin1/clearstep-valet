@@ -17,7 +17,7 @@
     }
     .page {
       width: 8.5in; height: 11in;
-      padding: 0.4in 0.5in 0.35in;
+      padding: 0.38in 0.48in 0.32in;
       position: relative;
       overflow: hidden;
     }
@@ -44,27 +44,22 @@
     }
 
     /* ── Grid ── */
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
 
     .section-label {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 7px; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase;
-      color: #6BBF2E; margin-bottom: 6px;
-    }
-    .section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px; font-weight: 800; color: #000;
-      margin-bottom: 6px;
+      color: #6BBF2E; margin-bottom: 5px;
     }
 
     /* ── Colors ── */
-    .color-row { display: flex; gap: 6px; margin-bottom: 4px; }
+    .color-row { display: flex; gap: 6px; margin-bottom: 5px; }
     .swatch {
       flex: 1; border-radius: 6px; overflow: hidden;
       border: 1px solid #e5e7eb;
     }
-    .swatch-fill { height: 32px; }
+    .swatch-fill { height: 30px; }
     .swatch-info { padding: 4px 6px; }
     .swatch-name { font-size: 8px; font-weight: 700; color: #000; }
     .swatch-hex { font-size: 7.5px; color: #9CA3AF; font-family: 'SF Mono', monospace; }
@@ -72,28 +67,27 @@
     /* ── Typography ── */
     .type-sample {
       border: 1px solid #e5e7eb; border-radius: 6px;
-      padding: 8px 10px; margin-bottom: 6px;
+      padding: 8px 10px; margin-bottom: 5px;
     }
     .type-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 800; color: #000; margin-bottom: 2px; }
     .type-body { font-size: 10px; color: #6B7280; }
     .type-meta { font-size: 7.5px; color: #9CA3AF; margin-top: 3px; }
 
     /* ── Logo usage ── */
-    .logo-row { display: flex; gap: 6px; margin-bottom: 6px; }
+    .logo-row { display: flex; gap: 8px; margin-bottom: 4px; }
     .logo-box {
-      flex: 1; border-radius: 6px; padding: 12px;
+      flex: 1; border-radius: 6px; padding: 14px;
       display: flex; align-items: center; justify-content: center;
       border: 1px solid #e5e7eb;
     }
-    .logo-box img { height: 32px; }
+    .logo-box img { height: 36px; }
     .logo-dark { background: #000; border-color: #333; }
-    .logo-label { font-size: 7px; color: #9CA3AF; text-align: center; margin-top: 2px; }
-    .logo-labels { display: flex; gap: 6px; }
+    .logo-labels { display: flex; gap: 8px; margin-bottom: 8px; }
     .logo-labels div { flex: 1; text-align: center; font-size: 7px; color: #9CA3AF; }
 
     /* ── Do / Don't ── */
     .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-    .rule-box { border-radius: 6px; padding: 7px 9px; font-size: 8.5px; line-height: 1.6; }
+    .rule-box { border-radius: 6px; padding: 7px 9px; font-size: 8.5px; line-height: 1.65; }
     .do-box { background: #f0fdf4; border: 1px solid #bbf7d0; }
     .dont-box { background: #fef2f2; border: 1px solid #fecaca; }
     .rule-title { font-size: 8px; font-weight: 700; margin-bottom: 3px; }
@@ -104,7 +98,7 @@
     .dont-box li::before { content: '✗ '; color: #dc2626; font-weight: 700; }
 
     /* ── Voice ── */
-    .voice-row { display: flex; gap: 8px; margin-top: 4px; }
+    .voice-row { display: flex; gap: 7px; margin-top: 4px; }
     .voice-pill {
       flex: 1; text-align: center; padding: 6px 4px;
       border-radius: 6px; border: 1px solid #e5e7eb;
@@ -112,9 +106,30 @@
     .voice-word { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; font-weight: 800; color: #000; }
     .voice-desc { font-size: 7.5px; color: #9CA3AF; margin-top: 1px; }
 
+    /* ── Applications ── */
+    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .app-card {
+      border: 1px solid #e5e7eb; border-radius: 6px;
+      padding: 7px 9px;
+    }
+    .app-title { font-size: 8px; font-weight: 700; color: #000; margin-bottom: 2px; }
+    .app-desc { font-size: 8px; color: #6B7280; line-height: 1.55; }
+
+    /* ── Email sig ── */
+    .sig-box {
+      border: 1px solid #e5e7eb; border-radius: 6px;
+      padding: 8px 10px; margin-top: 6px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sig-box img { height: 28px; }
+    .sig-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 9px; font-weight: 700; color: #000; }
+    .sig-role { font-size: 7px; color: #6BBF2E; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .sig-details { font-size: 7.5px; color: #9CA3AF; line-height: 1.6; }
+    .sig-divider { width: 1px; height: 28px; background: #6BBF2E; flex-shrink: 0; }
+
     /* ── Footer ── */
     .footer {
-      position: absolute; bottom: 0.3in; left: 0.5in; right: 0.5in;
+      position: absolute; bottom: 0.28in; left: 0.48in; right: 0.48in;
       display: flex; justify-content: space-between; align-items: center;
       padding-top: 8px; border-top: 1px solid #e5e7eb;
       font-size: 7px; color: #9CA3AF;
@@ -141,7 +156,7 @@
 
   <div class="grid">
 
-    <!-- LEFT COLUMN -->
+    <!-- ═══ LEFT COLUMN ═══ -->
     <div>
 
       <!-- Colors -->
@@ -191,37 +206,48 @@
       <div class="voice-row">
         <div class="voice-pill"><div class="voice-word">Professional</div><div class="voice-desc">B2B partner, not a side gig</div></div>
         <div class="voice-pill"><div class="voice-word">Reliable</div><div class="voice-desc">We show up every night</div></div>
-        <div class="voice-pill"><div class="voice-word">Local</div><div class="voice-desc">Not a faceless national chain</div></div>
+        <div class="voice-pill"><div class="voice-word">Local</div><div class="voice-desc">Not a national call center</div></div>
+      </div>
+
+      <!-- Email Signature -->
+      <div class="section-label" style="margin-top:12px;">Email Signature</div>
+      <div class="sig-box">
+        <img src="vps-logo.png" alt="VPS" />
+        <div class="sig-divider"></div>
+        <div>
+          <div class="sig-name">Shannon Honse</div>
+          <div class="sig-role">Owner / Operator</div>
+          <div class="sig-details">info@valetpropertysolutions.com · 316-573-1739<br/>valetpropertysolutions.com</div>
+        </div>
       </div>
 
     </div>
 
-    <!-- RIGHT COLUMN -->
+    <!-- ═══ RIGHT COLUMN ═══ -->
     <div>
 
       <!-- Logo -->
       <div class="section-label">Logo Usage</div>
       <div class="logo-row">
         <div class="logo-box"><img src="vps-logo.png" alt="On white" /></div>
-        <div class="logo-box logo-dark"><img src="vps-logo.png" alt="On black" style="filter:brightness(0) invert(1);" /></div>
         <div class="logo-box" style="background:#f3f4f6;"><img src="vps-logo.png" alt="Grayscale" style="filter:grayscale(1);" /></div>
       </div>
       <div class="logo-labels">
-        <div>On white</div>
-        <div>On dark (inverted)</div>
-        <div>Grayscale fallback</div>
+        <div>Full color — white background</div>
+        <div>Grayscale — print fallback</div>
       </div>
 
       <!-- Rules -->
-      <div class="rules" style="margin-top:12px;">
+      <div class="rules">
         <div class="do-box rule-box">
           <div class="rule-title">✓ Do</div>
           <ul>
-            <li>Use on white or black backgrounds</li>
+            <li>Use on white or light backgrounds</li>
             <li>Keep proportions locked</li>
             <li>Maintain clear space around logo</li>
             <li>Use exact hex color values</li>
             <li>Green for accents &amp; CTAs only</li>
+            <li>Min size: 1" print / 80px digital</li>
           </ul>
         </div>
         <div class="dont-box rule-box">
@@ -229,18 +255,40 @@
           <ul>
             <li>Rotate, stretch, or distort logo</li>
             <li>Place on busy backgrounds</li>
-            <li>Change the brand green</li>
-            <li>Add shadows or outlines</li>
+            <li>Change the brand green color</li>
+            <li>Add shadows, glows, or outlines</li>
             <li>Use decorative or script fonts</li>
+            <li>Use green as a text background</li>
           </ul>
         </div>
       </div>
 
       <!-- Terminology -->
-      <div class="section-label" style="margin-top:12px;">Terminology</div>
-      <div style="font-size:8.5px;line-height:1.7;">
+      <div class="section-label" style="margin-top:10px;">Terminology</div>
+      <div style="font-size:8.5px;line-height:1.7;margin-bottom:8px;">
         <div><strong style="color:#000;">Say:</strong> Valet trash service · Property partners · Valets · Doorstep pickup · Partnership agreement · Nightly reports</div>
-        <div style="margin-top:3px;"><strong style="color:#991b1b;">Avoid:</strong> Waste management solution · Trash guys · Clients · Contract · Analytics dashboard</div>
+        <div style="margin-top:3px;"><strong style="color:#991b1b;">Avoid:</strong> Waste management solution · Trash guys · Clients · Contract · Analytics · Dashboard</div>
+      </div>
+
+      <!-- Applications -->
+      <div class="section-label">Applications</div>
+      <div class="app-grid">
+        <div class="app-card">
+          <div class="app-title">Business Cards</div>
+          <div class="app-desc">White front, name + title + contact. Black back with centered logo.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-title">Vehicle Magnets</div>
+          <div class="app-desc">Black background, white logo + company name, green accent line, phone + URL.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-title">Uniforms</div>
+          <div class="app-desc">Black polo, logo left chest embroidered. Black lanyard with photo ID badge.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-title">Collection Bins</div>
+          <div class="app-desc">Black bin, weatherproof vinyl sticker with logo + "Place trash by 9 PM."</div>
+        </div>
       </div>
 
     </div>
@@ -248,7 +296,7 @@
 
   <!-- Footer -->
   <div class="footer">
-    <span>Valet Property Solutions · All in 1 Realty LLC</span>
+    <span>Valet Property Solutions · All in 1 Realty LLC · Confidential</span>
     <span>info@valetpropertysolutions.com · valetpropertysolutions.com</span>
   </div>
 

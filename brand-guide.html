@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valet Property Solutions — Brand Guidelines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --vps-green: #6BBF2E;
+      --vps-green-bright: #86E213;
+      --vps-green-dark: #4A8A1E;
+      --vps-black: #000000;
+      --vps-charcoal: #1A1A1A;
+      --vps-gray: #6B7280;
+      --vps-light-gray: #9CA3AF;
+      --vps-off-white: #F9FAFB;
+      --vps-white: #FFFFFF;
+      --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    @page { size: letter; margin: 0.5in 0.6in; }
+
+    html, body {
+      font-family: var(--font-body);
+      font-size: 10px;
+      line-height: 1.55;
+      color: #374151;
+      background: #f1f5f9;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .doc { max-width: 8.5in; margin: 0 auto; background: var(--vps-white); }
+
+    /* ═══ COVER ═══ */
+    .cover {
+      height: 11in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1in;
+      page-break-after: always;
+      position: relative;
+      background: var(--vps-black);
+    }
+    .cover img { width: 200px; margin-bottom: 40px; }
+    .cover h1 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--vps-white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .cover-sub {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--vps-green);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .cover-divider { width: 60px; height: 3px; background: var(--vps-green); margin: 30px auto; border-radius: 2px; }
+    .cover-footer {
+      position: absolute;
+      bottom: 40px;
+      font-size: 9px;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    /* ═══ CONTENT ═══ */
+    .content { padding: 0 44px; }
+
+    .section-num {
+      font-family: var(--font-heading);
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--vps-green);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 24px;
+      margin-bottom: 2px;
+    }
+    .section-num:first-child { margin-top: 0; }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--vps-black);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--vps-black);
+      margin-top: 14px;
+      margin-bottom: 4px;
+    }
+    p { margin-bottom: 6px; }
+    strong { color: var(--vps-black); }
+    .intro { font-size: 11px; color: var(--vps-gray); margin-bottom: 14px; line-height: 1.6; }
+
+    /* ═══ COLOR SWATCHES ═══ */
+    .color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 12px 0; }
+    .swatch { border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; }
+    .swatch-block { height: 60px; }
+    .swatch-info { padding: 8px 10px; background: #fff; }
+    .swatch-name { font-family: var(--font-heading); font-size: 10px; font-weight: 700; color: var(--vps-black); }
+    .swatch-hex { font-size: 9px; color: var(--vps-gray); font-family: 'SF Mono', 'Fira Code', monospace; }
+    .swatch-role { font-size: 8px; color: var(--vps-light-gray); margin-top: 2px; }
+
+    .color-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+
+    /* ═══ LOGO USAGE ═══ */
+    .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 12px 0; }
+    .logo-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+    .logo-box img { max-height: 70px; width: auto; }
+    .logo-label {
+      font-family: var(--font-heading);
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--vps-gray);
+      text-align: center;
+      margin-top: 5px;
+    }
+    .logo-dark { background: var(--vps-black); border-color: #333; }
+    .logo-green { background: var(--vps-green); border-color: var(--vps-green-dark); }
+
+    /* ═══ DO / DON'T ═══ */
+    .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 10px 0; }
+    .do-box, .dont-box {
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .do-box { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .dont-box { background: #fef2f2; border: 1px solid #fecaca; }
+    .do-box h4, .dont-box h4 {
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .do-box h4 { color: #166534; }
+    .dont-box h4 { color: #991b1b; }
+    .do-box ul, .dont-box ul { list-style: none; font-size: 9.5px; line-height: 1.7; }
+    .do-box li::before { content: '✓ '; color: #16a34a; font-weight: 700; }
+    .dont-box li::before { content: '✗ '; color: #dc2626; font-weight: 700; }
+
+    /* ═══ TYPOGRAPHY SPECIMEN ═══ */
+    .type-specimen { border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+    .type-header { background: var(--vps-off-white); padding: 10px 16px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
+    .type-name { font-family: var(--font-heading); font-size: 11px; font-weight: 700; color: var(--vps-black); }
+    .type-usage { font-size: 8px; color: var(--vps-green); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .type-body { padding: 14px 16px; }
+    .type-sample-lg { font-size: 28px; font-weight: 800; color: var(--vps-black); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 4px; }
+    .type-sample-md { font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 4px; }
+    .type-sample-sm { font-size: 10px; color: var(--vps-gray); line-height: 1.6; }
+    .type-weights { display: flex; gap: 18px; margin-top: 8px; font-size: 9px; color: var(--vps-gray); }
+    .type-weights span { font-weight: 400; }
+    .type-weights strong { color: var(--vps-black); }
+
+    /* ═══ CLEAR SPACE ═══ */
+    .clearspace-demo {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+      background: var(--vps-off-white);
+      position: relative;
+    }
+    .clearspace-inner {
+      border: 2px dashed var(--vps-green);
+      padding: 24px 32px;
+      position: relative;
+    }
+    .clearspace-inner img { height: 60px; display: block; }
+    .cs-label {
+      position: absolute;
+      font-size: 7px;
+      color: var(--vps-green);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .cs-top { top: 5px; left: 50%; transform: translateX(-50%); }
+    .cs-left { left: 6px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .cs-right { right: 2px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+    .cs-bottom { bottom: 5px; left: 50%; transform: translateX(-50%); }
+
+    /* ═══ APPLICATIONS ═══ */
+    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 10px 0; }
+    .app-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .app-card-demo { padding: 18px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
+    .app-card-label { background: var(--vps-off-white); padding: 8px 12px; border-top: 1px solid #e5e7eb; font-size: 9px; color: var(--vps-gray); }
+
+    /* ═══ TONE ═══ */
+    .tone-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0; }
+    .tone-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .tone-word { font-family: var(--font-heading); font-size: 13px; font-weight: 800; color: var(--vps-black); margin-bottom: 4px; }
+    .tone-desc { font-size: 9px; color: var(--vps-gray); line-height: 1.5; }
+
+    /* ═══ BUSINESS CARD ═══ */
+    .biz-card {
+      width: 3.5in;
+      height: 2in;
+      border-radius: 6px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: var(--font-body);
+      margin: 0 auto;
+    }
+    .biz-front { background: var(--vps-white); border: 1px solid #e5e7eb; }
+    .biz-back { background: var(--vps-black); color: #fff; }
+    .biz-name { font-family: var(--font-heading); font-size: 12px; font-weight: 700; color: var(--vps-black); }
+    .biz-title { font-size: 8px; color: var(--vps-green); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .biz-details { font-size: 8px; color: var(--vps-gray); line-height: 1.8; }
+    .biz-back-center { display: flex; align-items: center; justify-content: center; height: 100%; }
+    .biz-back-center img { height: 50px; filter: brightness(10); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* Vehicle */
+    .vehicle-demo {
+      background: var(--vps-off-white);
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 10px 0;
+    }
+    .vehicle-magnet {
+      background: var(--vps-black);
+      border-radius: 6px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .vehicle-magnet img { height: 36px; filter: brightness(10); }
+    .vehicle-magnet-text { color: #fff; }
+    .vehicle-magnet-text .vm-name { font-family: var(--font-heading); font-size: 12px; font-weight: 700; }
+    .vehicle-magnet-text .vm-tag { font-size: 8px; color: var(--vps-green); font-weight: 500; }
+
+    /* Uniform */
+    .uniform-spec {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 8px 0;
+    }
+    .uniform-spec table { width: 100%; border-collapse: collapse; font-size: 9.5px; }
+    .uniform-spec th { text-align: left; font-weight: 600; color: var(--vps-gray); padding: 4px 0; font-size: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .uniform-spec td { padding: 4px 0; border-top: 1px solid #f3f4f6; }
+
+    @media print { html, body { background: #fff; } .doc { box-shadow: none; } }
+    @media screen { body { padding: 20px; } .doc { box-shadow: 0 4px 40px rgba(0,0,0,0.12); } }
+  </style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- ═══════════════════ COVER ═══════════════════ -->
+  <div class="cover">
+    <img src="vps-logo.png" alt="VPS Logo" style="filter: brightness(0) invert(1);" />
+    <h1>Brand Guidelines</h1>
+    <div class="cover-sub">Identity Standards</div>
+    <div class="cover-divider"></div>
+    <div class="cover-footer">Valet Property Solutions · v1.0 · March 2026 · Confidential</div>
+  </div>
+
+  <!-- ═══════════════════ CONTENT ═══════════════════ -->
+  <div class="content">
+
+    <!-- ── 01 INTRODUCTION ── -->
+    <div class="section-num">01 — Introduction</div>
+    <h2>Brand Overview</h2>
+    <p class="intro">These guidelines define how Valet Property Solutions presents itself across every touchpoint — from business cards and uniforms to digital platforms and client-facing documents. Consistency builds trust, and trust wins contracts. Every team member and vendor should follow these standards.</p>
+
+    <div class="tone-grid">
+      <div class="tone-card">
+        <div class="tone-word">Professional</div>
+        <div class="tone-desc">We serve commercial clients. Every interaction should reflect the seriousness of a B2B partner, not a side gig.</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Reliable</div>
+        <div class="tone-desc">We show up every night. Our brand should communicate the same dependability — clean, consistent, no shortcuts.</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Local</div>
+        <div class="tone-desc">We're not a faceless national chain. We're local operators who pick up the phone and solve problems same-day.</div>
+      </div>
+    </div>
+
+    <!-- ── 02 LOGO ── -->
+    <div class="section-num">02 — Logo</div>
+    <h2>Primary Logo</h2>
+    <p>The VPS logo combines a <strong>V and P monogram</strong> with a <strong>roofline</strong> and <strong>checkmark</strong>, symbolizing property service and task completion. It is the cornerstone of our visual identity.</p>
+
+    <div class="logo-grid">
+      <div>
+        <div class="logo-box"><img src="vps-logo.png" alt="Full color on white" /></div>
+        <div class="logo-label">Full Color — White Background</div>
+      </div>
+      <div>
+        <div class="logo-box logo-dark"><img src="vps-logo.png" alt="On dark" style="filter: brightness(0) invert(1);" /></div>
+        <div class="logo-label">White — Dark Background</div>
+      </div>
+      <div>
+        <div class="logo-box" style="background:#f3f4f6;"><img src="vps-logo.png" alt="On gray" style="filter: grayscale(1);" /></div>
+        <div class="logo-label">Grayscale — Print Fallback</div>
+      </div>
+    </div>
+
+    <h3>Clear Space</h3>
+    <p>Maintain minimum clear space equal to the <strong>height of the "V" stroke</strong> on all sides. No text, graphics, or other logos should enter this zone.</p>
+
+    <div class="clearspace-demo">
+      <div class="clearspace-inner">
+        <span class="cs-label cs-top">V height</span>
+        <span class="cs-label cs-bottom">V height</span>
+        <span class="cs-label cs-left">V height</span>
+        <span class="cs-label cs-right">V height</span>
+        <img src="vps-logo.png" alt="Clear space demo" />
+      </div>
+    </div>
+
+    <h3>Minimum Size</h3>
+    <p><strong>Print:</strong> 1 inch wide minimum &nbsp;|&nbsp; <strong>Digital:</strong> 80px wide minimum &nbsp;|&nbsp; Below these sizes, use the icon mark (VP monogram only, no wordmark).</p>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Do</h4>
+        <ul>
+          <li>Use the logo on white, black, or dark gray backgrounds</li>
+          <li>Use the white version on any dark background</li>
+          <li>Use the grayscale version for single-color print</li>
+          <li>Keep the logo proportions locked (no stretching)</li>
+          <li>Center the logo when used as a standalone element</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Don't</h4>
+        <ul>
+          <li>Place on busy photos or patterned backgrounds</li>
+          <li>Rotate, skew, or distort the logo</li>
+          <li>Change the green to any other color</li>
+          <li>Add drop shadows, glows, or outlines</li>
+          <li>Rearrange the monogram and wordmark</li>
+          <li>Place on mid-tone backgrounds (use white or dark only)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── 03 COLOR ── -->
+    <div class="section-num">03 — Color Palette</div>
+    <h2>Brand Colors</h2>
+    <p>Our palette is built around two primary elements: <strong>VPS Green</strong> (action, growth, reliability) and <strong>Black</strong> (professionalism, authority). Supporting neutrals provide hierarchy and breathing room.</p>
+
+    <h3>Primary</h3>
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background: #6BBF2E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">VPS Green</div>
+          <div class="swatch-hex">#6BBF2E</div>
+          <div class="swatch-role">Primary accent · CTAs · highlights</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #000000;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">VPS Black</div>
+          <div class="swatch-hex">#000000</div>
+          <div class="swatch-role">Headlines · logo · primary text</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #86E213;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Bright Green</div>
+          <div class="swatch-hex">#86E213</div>
+          <div class="swatch-role">Gradient highlight · digital accent</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #4A8A1E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Green</div>
+          <div class="swatch-hex">#4A8A1E</div>
+          <div class="swatch-role">Dark mode accent · hover states</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Supporting Neutrals</h3>
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background: #1A1A1A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Charcoal</div>
+          <div class="swatch-hex">#1A1A1A</div>
+          <div class="swatch-role">Dark backgrounds · cards</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #6B7280;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Gray</div>
+          <div class="swatch-hex">#6B7280</div>
+          <div class="swatch-role">Body text · secondary info</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #E5E7EB;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Gray</div>
+          <div class="swatch-hex">#E5E7EB</div>
+          <div class="swatch-role">Borders · dividers · rules</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #F9FAFB; border: 1px solid #e5e7eb;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off White</div>
+          <div class="swatch-hex">#F9FAFB</div>
+          <div class="swatch-role">Page backgrounds · sections</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Color Usage</h4>
+        <ul>
+          <li>Green is for accents, CTAs, and highlights — never large background fills</li>
+          <li>Black or Charcoal for all major text</li>
+          <li>White or Off White for page/card backgrounds</li>
+          <li>Use the green gradient (Bright → VPS → Deep) sparingly for premium feel</li>
+          <li>Green on black = high contrast, great for digital and uniforms</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Color Misuse</h4>
+        <ul>
+          <li>Don't use green as a background color for text blocks</li>
+          <li>Don't use any blues, reds, or off-brand colors</li>
+          <li>Don't use light green text on white (fails accessibility)</li>
+          <li>Don't substitute similar greens — use exact hex values</li>
+          <li>Don't use green and charcoal together with no contrast (too dark)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── 04 TYPOGRAPHY ── -->
+    <div class="section-num">04 — Typography</div>
+    <h2>Type System</h2>
+
+    <div class="two-col">
+      <div class="type-specimen">
+        <div class="type-header">
+          <span class="type-name">Plus Jakarta Sans</span>
+          <span class="type-usage">Headlines & Display</span>
+        </div>
+        <div class="type-body">
+          <div class="type-sample-lg" style="font-family:var(--font-heading);">Valet Property Solutions</div>
+          <div class="type-sample-md" style="font-family:var(--font-heading);">Premium doorstep service</div>
+          <div class="type-weights">
+            <span>Weights: <strong>600 Semi</strong> · <strong>700 Bold</strong> · <strong>800 Extra</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="type-specimen">
+        <div class="type-header">
+          <span class="type-name">Inter</span>
+          <span class="type-usage">Body & UI</span>
+        </div>
+        <div class="type-body">
+          <div class="type-sample-md" style="font-family:var(--font-body);font-weight:400;">We provide door-to-door valet trash collection for apartment communities.</div>
+          <div class="type-sample-sm" style="font-family:var(--font-body);">Mon–Sat pickup · 9 PM cutoff · Nightly reports · Issue tracking with photos</div>
+          <div class="type-weights">
+            <span>Weights: <strong>400 Regular</strong> · <strong>500 Medium</strong> · <strong>600 Semi</strong> · <strong>700 Bold</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Type Hierarchy</h3>
+    <div class="uniform-spec">
+      <table>
+        <tr><th style="width:30%;">Element</th><th>Font</th><th>Weight</th><th>Size</th></tr>
+        <tr><td><strong>Page Title</strong></td><td>Plus Jakarta Sans</td><td>800</td><td>28–34px</td></tr>
+        <tr><td><strong>Section Heading</strong></td><td>Plus Jakarta Sans</td><td>700</td><td>18–22px</td></tr>
+        <tr><td><strong>Subheading</strong></td><td>Plus Jakarta Sans</td><td>600</td><td>13–16px</td></tr>
+        <tr><td><strong>Body Text</strong></td><td>Inter</td><td>400</td><td>10–14px</td></tr>
+        <tr><td><strong>Captions / Labels</strong></td><td>Inter</td><td>600</td><td>8–10px</td></tr>
+        <tr><td><strong>Buttons / CTAs</strong></td><td>Plus Jakarta Sans</td><td>700</td><td>12–14px</td></tr>
+      </table>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Type Rules</h4>
+        <ul>
+          <li>Use Plus Jakarta Sans for all headlines and display text</li>
+          <li>Use Inter for body copy, labels, and UI elements</li>
+          <li>System fonts (Arial, Helvetica) only as last-resort fallbacks</li>
+          <li>Headlines: tight letter-spacing (-0.02em)</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Type Rules</h4>
+        <ul>
+          <li>Never use decorative, script, or novelty fonts</li>
+          <li>Never use all-caps for body text (headings and labels only)</li>
+          <li>Don't use thin/light weights — minimum 400</li>
+          <li>Don't mix more than these two font families</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── 05 VOICE & TONE ── -->
+    <div class="section-num">05 — Voice & Tone</div>
+    <h2>How We Communicate</h2>
+    <p>Every piece of copy — emails, proposals, social posts, even text messages — should sound like it comes from the same company. We are professional but not corporate, confident but not arrogant.</p>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ We Sound Like</h4>
+        <ul>
+          <li>"We'll have bins delivered and service running within 7 business days."</li>
+          <li>"Your nightly report is ready — 100% completion, zero issues."</li>
+          <li>"Let us know if anything needs attention. We're a call away."</li>
+          <li>"Here's how VPS adds $36,000/year to your property's NOI."</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ We Don't Sound Like</h4>
+        <ul>
+          <li>"Hey! We'd LOVE to help with your trash!! 🎉🗑️"</li>
+          <li>"We are the premier synergistic waste solution provider."</li>
+          <li>"Hmu if you need trash picked up lol"</li>
+          <li>"As the industry-leading valet trash innovator..."</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Key Phrases</h3>
+    <div class="uniform-spec">
+      <table>
+        <tr><th>Use</th><th>Instead Of</th></tr>
+        <tr><td><strong>Valet trash service</strong></td><td>Waste management solution</td></tr>
+        <tr><td><strong>Property partners</strong></td><td>Clients / customers</td></tr>
+        <tr><td><strong>Valets</strong></td><td>Workers / trash guys / employees (external)</td></tr>
+        <tr><td><strong>Doorstep pickup</strong></td><td>Door-to-door collection</td></tr>
+        <tr><td><strong>Nightly reports</strong></td><td>Reporting / analytics / dashboards</td></tr>
+        <tr><td><strong>Partnership agreement</strong></td><td>Contract / deal / arrangement</td></tr>
+      </table>
+    </div>
+
+    <!-- ── 06 APPLICATIONS ── -->
+    <div class="section-num">06 — Applications</div>
+    <h2>Brand in Use</h2>
+
+    <h3>Business Card</h3>
+    <div class="two-col" style="margin:10px 0;">
+      <div>
+        <div class="biz-card biz-front">
+          <div>
+            <div class="biz-name">Shannon Honse</div>
+            <div class="biz-title">Owner / Operator</div>
+          </div>
+          <div class="biz-details">
+            <div>info@valetpropertysolutions.com</div>
+            <div>316-573-1739</div>
+            <div>valetpropertysolutions.com</div>
+          </div>
+        </div>
+        <div class="logo-label" style="margin-top:4px;">Front — Clean, left-aligned</div>
+      </div>
+      <div>
+        <div class="biz-card biz-back">
+          <div class="biz-back-center">
+            <img src="vps-logo.png" alt="Card back" />
+          </div>
+        </div>
+        <div class="logo-label" style="margin-top:4px;">Back — Black, centered logo</div>
+      </div>
+    </div>
+
+    <h3>Vehicle Magnet</h3>
+    <div class="vehicle-demo">
+      <div class="vehicle-magnet">
+        <img src="vps-logo.png" alt="Vehicle magnet logo" />
+        <div class="vehicle-magnet-text">
+          <div class="vm-name">VALET PROPERTY SOLUTIONS</div>
+          <div class="vm-tag">valetpropertysolutions.com · 316-573-1739</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Uniform Specifications</h3>
+    <div class="uniform-spec">
+      <table>
+        <tr><th>Item</th><th>Spec</th></tr>
+        <tr><td><strong>Polo shirt</strong></td><td>Black fabric · VPS logo left chest (embroidered or heat press) · "VALET PROPERTY SOLUTIONS" back collar in white</td></tr>
+        <tr><td><strong>Hi-vis vest</strong> (optional)</td><td>Standard safety yellow/green · VPS logo patch on left chest</td></tr>
+        <tr><td><strong>Cap</strong> (optional)</td><td>Black · VP monogram front center in white/green</td></tr>
+        <tr><td><strong>ID badge</strong></td><td>Black lanyard · White badge with photo, name, "VALET" designation, VPS logo</td></tr>
+      </table>
+    </div>
+
+    <h3>Collection Bins</h3>
+    <div class="uniform-spec">
+      <table>
+        <tr><th>Element</th><th>Spec</th></tr>
+        <tr><td><strong>Bin color</strong></td><td>Black (preferred) or dark gray</td></tr>
+        <tr><td><strong>Sticker</strong></td><td>Round or rectangular vinyl decal · VPS logo + "Valet Property Solutions" + "Place trash by 9 PM" · Weatherproof</td></tr>
+        <tr><td><strong>Placement</strong></td><td>Front-facing on lid or upper body of bin</td></tr>
+      </table>
+    </div>
+
+    <!-- ── 07 DIGITAL ── -->
+    <div class="section-num">07 — Digital Standards</div>
+    <h2>Web & App</h2>
+
+    <div class="two-col">
+      <div>
+        <h3>Website</h3>
+        <ul style="list-style:none;font-size:9.5px;line-height:1.8;">
+          <li>→ Dark editorial aesthetic (dark hero, white content sections)</li>
+          <li>→ Green accents for CTAs and interactive elements only</li>
+          <li>→ Plus Jakarta Sans headings, Inter body</li>
+          <li>→ Full-width sections, max 1200px content width</li>
+          <li>→ Contact form must be above fold on mobile</li>
+          <li>→ No stock photos — icons and data visualization only</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Management App</h3>
+        <ul style="list-style:none;font-size:9.5px;line-height:1.8;">
+          <li>→ True black background (#050505) — dark mode only</li>
+          <li>→ Neon green accent (#4ADE80) for primary actions</li>
+          <li>→ Card-based layout with subtle borders (#2C2C2C)</li>
+          <li>→ Inter + Plus Jakarta Sans via Google Fonts</li>
+          <li>→ Bottom navigation, 5 tabs max</li>
+          <li>→ Loading states use shimmer animation, not spinners</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Email Signature</h3>
+    <div style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 18px;margin:8px 0;max-width:380px;">
+      <div style="font-family:var(--font-heading);font-weight:700;font-size:12px;color:var(--vps-black);">Shannon Honse</div>
+      <div style="font-size:9px;color:var(--vps-green);font-weight:600;margin-bottom:6px;">Owner / Operator</div>
+      <div style="font-size:9px;color:var(--vps-gray);line-height:1.8;border-top:2px solid var(--vps-green);padding-top:6px;">
+        Valet Property Solutions<br/>
+        info@valetpropertysolutions.com · 316-573-1739<br/>
+        valetpropertysolutions.com
+      </div>
+    </div>
+
+    <!-- ── 08 FILES ── -->
+    <div class="section-num">08 — File Formats</div>
+    <h2>Logo Files</h2>
+    <div class="uniform-spec">
+      <table>
+        <tr><th>Format</th><th>Use Case</th><th>Background</th></tr>
+        <tr><td><strong>PNG (full color)</strong></td><td>Web, presentations, documents</td><td>Transparent</td></tr>
+        <tr><td><strong>PNG (white)</strong></td><td>Dark backgrounds, apparel, vehicles</td><td>Transparent</td></tr>
+        <tr><td><strong>SVG</strong></td><td>Web, responsive/scalable use</td><td>Transparent</td></tr>
+        <tr><td><strong>PDF (vector)</strong></td><td>Print production, signage</td><td>Transparent</td></tr>
+        <tr><td><strong>PNG (grayscale)</strong></td><td>Fax, single-color print, stamps</td><td>Transparent</td></tr>
+      </table>
+    </div>
+    <p style="font-size:9px;color:var(--vps-light-gray);">All logo files should be provided by the brand owner. Do not recreate, trace, or screenshot the logo. Contact info@valetpropertysolutions.com for logo files.</p>
+
+    <div style="margin-top:16px;padding:14px 18px;background:var(--vps-black);border-radius:8px;text-align:center;">
+      <div style="font-family:var(--font-heading);font-size:10px;font-weight:600;color:var(--vps-green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Questions about brand usage?</div>
+      <div style="font-size:10px;color:#fff;">info@valetpropertysolutions.com</div>
+    </div>
+
+    <p style="margin-top:12px;font-size:8px;color:var(--vps-light-gray);text-align:center;"><em>Valet Property Solutions Brand Guidelines v1.0 · March 2026 · All rights reserved.</em></p>
+
+  </div>
+</div>
+</body>
+</html>
